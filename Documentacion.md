@@ -211,7 +211,7 @@ Este documento define los **casos de uso** del proyecto **Portfolio Personal en 
 
 ---
 
-# **Diagrama de Casos de Uso**
+## **Diagrama de Casos de Uso**
 
 Este apartado presenta los **diagramas de casos de uso** del proyecto **Portfolio Personal en WordPress**. Estos diagramas permiten visualizar de manera estructurada las interacciones entre los distintos actores del sistema y las funcionalidades que pueden realizar dentro del sitio web.
 
