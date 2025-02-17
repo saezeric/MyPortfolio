@@ -1,41 +1,18 @@
-# **Portfolio Personal en WordPress**
+# **📄 Documentación del Proyecto \- Portfolio Personal en WordPress**
 
-## **Descripción del Proyecto**
+Esta es la rama **documentación** del repositorio. Aquí se almacena exclusivamente **la documentación del proyecto**, sin incluir ningún otro tipo de archivos o código fuente.
 
-Este proyecto consiste en la creación de un **portafolio web personal** utilizando **WordPress**, desarrollado completamente desde cero sin el uso de maquetadores visuales. El sitio servirá como una herramienta profesional para mostrar mi experiencia, habilidades y proyectos.
+## **📌 ¿Qué encontrarás en esta rama?**
 
-## **Características Principales**
+En esta rama se recopila toda la información detallada sobre el desarrollo del proyecto, incluyendo:
 
-- Desarrollo de una plantilla **totalmente personalizada** en WordPress.
-- Sección de **proyectos** dinámicos donde se mostrarán trabajos previos.
-- Página **"Sobre mí"** con información personal y profesional.
-- Formulario de contacto con validaciones.
-- **Optimización SEO** básica como parte del proceso de aprendizaje.
-- Implementación de **plugins** para seguridad, rendimiento y gestión de contenido.
-- Diseño **responsivo** y optimizado para distintos dispositivos.
+- 📑 **Documentación de requisitos y planificación**: Definición del proyecto, objetivos y roadmap.
+- 🛠 **Historias de usuario y metodología**: Descripción de las tareas organizadas en sprints.
+- 🎨 **Diseño y estructura**: Wireframes, mockups y guías de estilo utilizados en la web.
+- 🔧 **Instalación y configuración**: Documentos que explican cómo poner en marcha el proyecto.
+- 📝 **Registros de avances**: Reportes y actualizaciones sobre el progreso del desarrollo.
 
-## **Tecnologías Utilizadas**
+## **⚠ Importante**
 
-- **Lenguajes:** HTML, CSS, JavaScript, PHP
-- **Base de Datos:** MySQL
-- **CMS:** WordPress (con plantilla propia)
-- **Plugins:** Yoast SEO, WPForms, Wordfence, WP Rocket, entre otros.
-- **Entorno de Desarrollo:** Local con posible migración futura a un servidor definitivo.
-
-## **Estructura del Proyecto**
-
-MyPortfolio
-
-```
-/portfolio-wordpress
-│── /wp-content
-│   ├── /themes
-│   │   ├── /mi-tema-personalizado  # Plantilla personalizada del portafolio
-│── /database.sql  # Base de datos inicial
-│── README.md
-│── .gitignore
-```
-
-## **Estado del Proyecto**
-
-Actualmente en desarrollo. Planificación de funcionalidades en curso y estructura base ya implementada. Se actualizará conforme avance el desarrollo.
+- **Esta rama contiene únicamente documentación.** No se almacenará aquí ningún código, archivos del proyecto o elementos ajenos a la explicación del proceso.
+- Para acceder al código fuente y demás archivos del proyecto, dirígete a la rama `main`.
