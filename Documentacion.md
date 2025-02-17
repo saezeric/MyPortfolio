@@ -139,7 +139,7 @@ Este documento define los **casos de uso** del proyecto **Portfolio Personal en 
 
 ---
 
-<!-- #### **CU-05: Contactar al administrador**
+#### **CU-05: Contactar al administrador**
 
 **Actor:** Usuario (Anónimo) **Descripción:** El usuario puede enviar un mensaje al administrador a través del formulario de contacto. **Flujo principal:**
 
@@ -151,6 +151,7 @@ Este documento define los **casos de uso** del proyecto **Portfolio Personal en 
 
 ---
 
+<!--
 ### **Casos de Uso para el Administrador**
 
 #### **CU-06: Gestionar información del portfolio**
