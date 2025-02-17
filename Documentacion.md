@@ -79,3 +79,148 @@ El proyecto se desarrollará en varias etapas, asegurando una implementación es
 ## **6. Consideraciones Finales**
 
 Este documento es una versión inicial de la definición del proyecto. A medida que se avance en el desarrollo, se podrán hacer cambios y mejoras para ajustarlo mejor a las necesidades. Se actualizará conforme se detecten nuevas oportunidades de mejora, asegurando que el sitio crezca y evolucione junto con la experiencia y los requerimientos del usuario.
+
+## **Casos de Uso \- Portfolio Personal en WordPress**
+
+### **Introducción**
+
+Este documento define los **casos de uso** del proyecto **Portfolio Personal en WordPress**. La web no contará con sistema de autenticación ni funcionalidades que requieran registro de usuarios. Se identifican dos tipos de actores principales:
+
+- **Usuarios (Anónimos):** Visitantes que navegan el sitio sin necesidad de registro. Pueden interactuar con ciertas secciones de la web, como leer el blog y dejar comentarios.
+- **Admin:** El administrador del sitio, responsable de gestionar todo el contenido y la configuración del portafolio.
+
+---
+
+### **Casos de Uso para Usuarios Anónimos**
+
+#### **CU-01: Navegar por el sitio web**
+
+**Actor:** Usuario (Anónimo) **Descripción:** El usuario puede acceder a la web y navegar por sus distintas secciones. **Flujo principal:**
+
+1. El usuario accede a la web a través de un navegador.
+2. Puede visualizar el contenido del portafolio, incluyendo la sección "Sobre mí", "Proyectos" y "Blog".
+3. Puede interactuar con enlaces de redes sociales proporcionados en la web.
+4. Fin del caso de uso.
+
+---
+
+#### **CU-02: Visualizar la información del portfolio**
+
+**Actor:** Usuario (Anónimo) **Descripción:** El usuario puede acceder a la información sobre el propietario del portafolio. **Flujo principal:**
+
+1. El usuario accede a la sección "Sobre mí" o "Proyectos".
+2. Se muestra información personal y profesional del administrador.
+3. Puede leer sobre la trayectoria, habilidades y proyectos realizados.
+4. Fin del caso de uso.
+
+---
+
+#### **CU-03: Visualizar el blog**
+
+**Actor:** Usuario (Anónimo) **Descripción:** El usuario puede acceder y leer los artículos publicados en la sección del blog. **Flujo principal:**
+
+1. El usuario accede a la sección "Blog".
+2. Se muestra una lista de artículos publicados.
+3. El usuario selecciona un artículo para leer su contenido.
+4. Puede regresar a la lista de artículos o seguir navegando por la web.
+5. Fin del caso de uso.
+
+---
+
+#### **CU-04: Comentar en artículos del blog**
+
+**Actor:** Usuario (Anónimo) **Descripción:** El usuario puede dejar comentarios en los artículos del blog sin necesidad de registro. **Flujo principal:**
+
+1. El usuario accede a un artículo en la sección "Blog".
+2. En la parte inferior del artículo, encuentra un formulario de comentarios.
+3. Escribe un comentario y lo envía.
+4. El sistema guarda el comentario y lo muestra en la sección de comentarios.
+5. Fin del caso de uso.
+
+---
+
+#### **CU-05: Contactar al administrador**
+
+**Actor:** Usuario (Anónimo) **Descripción:** El usuario puede enviar un mensaje al administrador a través del formulario de contacto. **Flujo principal:**
+
+1. El usuario accede a la sección "Contacto".
+2. Completa el formulario con su nombre, email y mensaje.
+3. Envía el formulario.
+4. El administrador recibe el mensaje por correo electrónico.
+5. Fin del caso de uso.
+
+---
+
+### **Casos de Uso para el Administrador**
+
+#### **CU-06: Gestionar información del portfolio**
+
+**Actor:** Admin **Descripción:** El administrador puede editar la información del portfolio (biografía, experiencia, habilidades, etc.). **Flujo principal:**
+
+1. El administrador accede al panel de administración de WordPress.
+2. Selecciona la sección "Sobre mí" o "Proyectos".
+3. Edita los textos e imágenes correspondientes.
+4. Guarda los cambios y verifica la actualización en el sitio público.
+5. Fin del caso de uso.
+
+---
+
+#### **CU-07: Gestionar los proyectos mostrados en el portafolio**
+
+**Actor:** Admin **Descripción:** El administrador puede agregar, editar o eliminar proyectos del portafolio. **Flujo principal:**
+
+1. El administrador accede al panel de WordPress.
+2. Navega a la sección "Proyectos".
+3. Puede agregar un nuevo proyecto, modificar uno existente o eliminar un proyecto.
+4. Guarda los cambios y verifica la actualización en la web pública.
+5. Fin del caso de uso.
+
+---
+
+#### **CU-08: Gestionar los artículos del blog**
+
+**Actor:** Admin **Descripción:** El administrador puede escribir, editar o eliminar artículos del blog. **Flujo principal:**
+
+1. El administrador accede a la sección "Entradas" en el panel de administración.
+2. Puede agregar un nuevo artículo, modificar uno existente o eliminar un artículo.
+3. Guarda los cambios y verifica que se reflejen en la web.
+4. Fin del caso de uso.
+
+---
+
+#### **CU-09: Moderar comentarios en el blog**
+
+**Actor:** Admin **Descripción:** El administrador puede aprobar, eliminar o marcar como spam los comentarios realizados por los usuarios en los artículos del blog. **Flujo principal:**
+
+1. El administrador accede a la sección "Comentarios" en el panel de WordPress.
+2. Revisa los comentarios pendientes de aprobación.
+3. Puede aprobar, responder, eliminar o marcar comentarios como spam.
+4. Fin del caso de uso.
+
+---
+
+#### **CU-10: Configurar y optimizar el sitio web**
+
+**Actor:** Admin **Descripción:** El administrador puede realizar ajustes en la configuración del sitio, instalar plugins y optimizar el rendimiento. **Flujo principal:**
+
+1. El administrador accede a la configuración de WordPress.
+2. Ajusta parámetros del sitio, como título, descripciones, enlaces permanentes, etc.
+3. Puede instalar y configurar plugins para mejorar la seguridad, SEO y rendimiento.
+4. Guarda los cambios y verifica que el sitio funcione correctamente.
+5. Fin del caso de uso.
+
+---
+
+# **Diagrama de Casos de Uso**
+
+Este apartado presenta los **diagramas de casos de uso** del proyecto **Portfolio Personal en WordPress**. Estos diagramas permiten visualizar de manera estructurada las interacciones entre los distintos actores del sistema y las funcionalidades que pueden realizar dentro del sitio web.
+
+A continuación, se presentan los diagramas de casos de uso correspondientes a cada actor, detallando sus interacciones dentro del sistema.
+
+1. **Usuarios Anónimos:**
+
+![Diagrama casos de uso Usuarios Anonimos](./images/diagramas/casos_uso/diagramaCasosUsoUsuarios.png)
+
+2. **Administrador:**
+
+![Diagrama casos de uso Administrador](./images/diagramas/casos_uso/diagramaCasosUsoAdmin.png)
