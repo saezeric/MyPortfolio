@@ -1,4 +1,6 @@
-# **📄 Documentación del Proyecto \- Portfolio Personal en WordPress**
+# **MyPortfolio**
+
+## **📄 Documentación del Proyecto - Portfolio Personal en WordPress**
 
 Esta es la rama **documentación** del repositorio. Aquí se almacena exclusivamente **la documentación del proyecto**, sin incluir ningún otro tipo de archivos o código fuente.
 
