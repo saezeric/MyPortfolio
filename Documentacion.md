@@ -139,7 +139,7 @@ Este documento define los **casos de uso** del proyecto **Portfolio Personal en 
 
 ---
 
-#### **CU-05: Contactar al administrador**
+<!-- #### **CU-05: Contactar al administrador**
 
 **Actor:** Usuario (Anónimo) **Descripción:** El usuario puede enviar un mensaje al administrador a través del formulario de contacto. **Flujo principal:**
 
@@ -209,7 +209,7 @@ Este documento define los **casos de uso** del proyecto **Portfolio Personal en 
 4. Guarda los cambios y verifica que el sitio funcione correctamente.
 5. Fin del caso de uso.
 
----
+--- -->
 
 ## **Diagrama de Casos de Uso**
 
@@ -223,4 +223,4 @@ A continuación, se presentan los diagramas de casos de uso correspondientes a c
 
 2. **Administrador:**
 
-![Diagrama casos de uso Administrador](./images/diagramas/casos_uso/diagramaCasosUsoAdmin.png)
+**En proceso**
