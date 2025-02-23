@@ -151,7 +151,6 @@ Este documento define los **casos de uso** del proyecto **Portfolio Personal en 
 
 ---
 
-<!--
 ### **Casos de Uso para el Administrador**
 
 #### **CU-06: Gestionar información del portfolio**
@@ -210,7 +209,74 @@ Este documento define los **casos de uso** del proyecto **Portfolio Personal en 
 4. Guarda los cambios y verifica que el sitio funcione correctamente.
 5. Fin del caso de uso.
 
---- -->
+---
+
+#### **CU-11: Modificar la información personal**
+
+**Actor:** Admin **Descripción:** El administrador puede actualizar su información personal, incluyendo currículum vitae, lugar de residencia, información de contacto, nombre y apellidos. **Flujo principal:**
+
+1. El administrador accede al panel de administración de WordPress.
+2. Selecciona la sección de información personal.
+3. Edita los campos necesarios.
+4. Guarda los cambios y verifica la actualización en el sitio público.
+5. Fin del caso de uso.
+
+---
+
+#### **CU-12: Añadir funcionalidades al tema**
+
+**Actor:** Admin **Descripción:** El administrador puede agregar nuevas funcionalidades al tema de WordPress "MyPortfolio" desarrollado para la web. **Flujo principal:**
+
+1. El administrador accede al código fuente del tema.
+2. Modifica o agrega funcionalidades necesarias.
+3. Prueba las nuevas funcionalidades en un entorno de desarrollo.
+4. Implementa los cambios en el entorno de producción.
+5. Fin del caso de uso.
+
+---
+
+#### **CU-13: Añadir tecnologías utilizadas o conocimientos adquiridos**
+
+**Actor:** Admin **Descripción:** El administrador puede actualizar la lista de tecnologías utilizadas y conocimientos adquiridos en su trayectoria profesional. **Flujo principal:**
+
+1. El administrador accede a la sección de tecnologías o conocimientos.
+2. Añade, edita o elimina elementos de la lista.
+3. Guarda los cambios y revisa la actualización en la web.
+4. Fin del caso de uso.
+
+---
+
+#### **CU-14: Publicar artículos en el apartado noticias**
+
+**Actor:** Admin **Descripción:** El administrador puede publicar artículos en el blog sobre nuevas noticias relacionadas con su vida profesional o logros. **Flujo principal:**
+
+1. El administrador accede a la sección "Entradas" en el panel de administración.
+2. Crea una nueva entrada y escribe el contenido.
+3. Guarda y publica el artículo.
+4. Verifica la correcta visualización en la web.
+5. Fin del caso de uso.
+
+---
+
+#### **CU-15: Responder a entidades o personas que contacten al administrador**
+
+**Actor:** Admin **Descripción:** El administrador puede responder manualmente a mensajes recibidos a través del formulario de contacto (esta acción no forma parte de la web en sí, pero es parte del flujo de interacción). **Flujo principal:**
+
+1. El administrador recibe una notificación de contacto.
+2. Revisa el mensaje recibido en su correo electrónico.
+3. Decide si responde o toma alguna acción basada en el mensaje.
+4. Fin del caso de uso.
+
+---
+
+#### **CU-16: Modificar el apartado de FAQ's**
+
+**Actor:** Admin **Descripción:** El administrador puede modificar la sección de preguntas frecuentes en función de las dudas recibidas sobre su trabajo o su perfil. **Flujo principal:**
+
+1. El administrador accede a la sección de FAQ's en el panel de administración.
+2. Añade, edita o elimina preguntas y respuestas.
+3. Guarda los cambios y verifica que se reflejen en la web.
+4. Fin del caso de uso.
 
 ## **Diagrama de Casos de Uso**
 
@@ -224,4 +290,4 @@ A continuación, se presentan los diagramas de casos de uso correspondientes a c
 
 2. **Administrador:**
 
-**En proceso**
+![Diagrama casos de uso Administrador](./images/diagramas/casos_uso/diagramaCasosUsoAdmin.png)
