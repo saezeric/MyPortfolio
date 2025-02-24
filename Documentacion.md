@@ -80,7 +80,7 @@ El proyecto se desarrollará en varias etapas, asegurando una implementación es
 
 Este documento es una versión inicial de la definición del proyecto. A medida que se avance en el desarrollo, se podrán hacer cambios y mejoras para ajustarlo mejor a las necesidades. Se actualizará conforme se detecten nuevas oportunidades de mejora, asegurando que el sitio crezca y evolucione junto con la experiencia y los requerimientos del usuario.
 
-## **Casos de Uso \- Portfolio Personal en WordPress**
+## **Casos de Uso - Portfolio Personal en WordPress**
 
 ### **Introducción**
 
@@ -315,56 +315,56 @@ El proyecto estará estructurado en distintas versiones, basadas en las historia
 
 #### **Versiones Planificadas**
 
-#### **Versión 1.0: Inicio y Planificación (Febrero \- Marzo 2025\)**
+#### **Versión 1.0: Inicio y Planificación (Febrero - Marzo 2025)**
 
 - Definición de requisitos iniciales.
 - Elaboración de casos de uso y diagramas de flujo.
 - Planificación de versiones y estructura del proyecto.
 - Creación de bocetos iniciales.
 
-#### **Versión 1.1: Diseño y Conceptualización (Marzo 2025\)**
+#### **Versión 1.1: Diseño y Conceptualización (Marzo 2025)**
 
 - Elaboración de wireframes y mockups.
 - Creación de la guía de estilos.
 - Definición del entorno de desarrollo.
 - Configuración del repositorio en GitHub.
 
-#### **Versión 1.2: Desarrollo de la Base del Proyecto (Marzo \- Abril 2025\)**
+#### **Versión 1.2: Desarrollo de la Base del Proyecto (Marzo - Abril 2025)**
 
 - Creación de la estructura base del tema de WordPress desde cero.
 - Implementación del sistema de rutas y archivos principales.
 - Configuración de la base de datos en MySQL.
 - Diseño inicial de la base de datos y relaciones.
 
-#### **Versión 1.3: Desarrollo de la Interfaz y Funcionalidades Iniciales (Abril 2025\)**
+#### **Versión 1.3: Desarrollo de la Interfaz y Funcionalidades Iniciales (Abril 2025)**
 
 - Desarrollo de la plantilla HTML y estructura general del sitio.
 - Implementación del header y footer personalizados.
 - Creación de la página de inicio con contenido dinámico.
 - Implementación de la página "Sobre mí" con datos configurables.
 
-#### **Versión 1.4: Desarrollo de las Secciones Clave (Abril \- Mayo 2025\)**
+#### **Versión 1.4: Desarrollo de las Secciones Clave (Abril - Mayo 2025)**
 
 - Creación de la sección de proyectos con estructura dinámica.
 - Implementación de formularios de contacto con validaciones básicas.
 - Desarrollo de las secciones de navegación y menú adaptable.
 - Configuración de plugins esenciales para la web (seguridad, SEO básico, formularios).
 
-#### **Versión 1.5: Optimización y Seguridad (Mayo 2025\)**
+#### **Versión 1.5: Optimización y Seguridad (Mayo 2025)**
 
 - Aplicación de estrategias de optimización de rendimiento.
 - Implementación de medidas básicas de seguridad mediante plugins.
 - Optimización de la velocidad de carga y caché.
 - Pruebas en distintos dispositivos y navegadores.
 
-#### **Versión 1.6: Pruebas Finales y Ajustes (Mayo 2025\)**
+#### **Versión 1.6: Pruebas Finales y Ajustes (Mayo 2025)**
 
 - Test de usuario y evaluación de la experiencia de navegación.
 - Corrección de errores y ajustes de última hora.
 - Implementación de mejoras en diseño y funcionalidad.
 - Preparación de la documentación para la presentación.
 
-#### **Versión 2.0: Despliegue y Presentación (Junio 2025\)**
+#### **Versión 2.0: Despliegue y Presentación (Junio 2025)**
 
 - Migración del sitio a un servidor definitivo.
 - Pruebas finales en producción.
