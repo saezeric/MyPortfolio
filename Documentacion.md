@@ -298,3 +298,87 @@ A continuación, se presentan los diagramas de casos de uso correspondientes a c
 Diagrama de casos de uso:
 
 ![Diagrama de casos de uso](./images/diagramas/casos_uso/diagramaCasosDeUso.png)
+
+## **Planificación de las Versiones y Estructura del Proyecto**
+
+### **Introducción**
+
+Este documento tiene como objetivo definir las **versiones del proyecto** y la organización de tareas para gestionar de manera eficiente el desarrollo del **Portfolio Personal en WordPress**. La planificación estructurada garantizará un avance progresivo y un control adecuado de cada fase del proyecto.
+
+### **Objetivo**
+
+Como desarrollador, quiero definir las versiones del proyecto y organizar sus tareas para gestionar de manera eficiente el desarrollo, asegurando que cada fase cumpla con los objetivos establecidos y permitiendo futuras mejoras o expansiones.
+
+### **Estructura del Proyecto**
+
+El proyecto estará estructurado en distintas versiones, basadas en las historias de usuario y los sprints definidos previamente, asegurando una evolución progresiva del desarrollo.
+
+#### **Versiones Planificadas**
+
+#### **Versión 1.0: Inicio y Planificación (Febrero \- Marzo 2025\)**
+
+- Definición de requisitos iniciales.
+- Elaboración de casos de uso y diagramas de flujo.
+- Planificación de versiones y estructura del proyecto.
+- Creación de bocetos iniciales.
+
+#### **Versión 1.1: Diseño y Conceptualización (Marzo 2025\)**
+
+- Elaboración de wireframes y mockups.
+- Creación de la guía de estilos.
+- Definición del entorno de desarrollo.
+- Configuración del repositorio en GitHub.
+
+#### **Versión 1.2: Desarrollo de la Base del Proyecto (Marzo \- Abril 2025\)**
+
+- Creación de la estructura base del tema de WordPress desde cero.
+- Implementación del sistema de rutas y archivos principales.
+- Configuración de la base de datos en MySQL.
+- Diseño inicial de la base de datos y relaciones.
+
+#### **Versión 1.3: Desarrollo de la Interfaz y Funcionalidades Iniciales (Abril 2025\)**
+
+- Desarrollo de la plantilla HTML y estructura general del sitio.
+- Implementación del header y footer personalizados.
+- Creación de la página de inicio con contenido dinámico.
+- Implementación de la página "Sobre mí" con datos configurables.
+
+#### **Versión 1.4: Desarrollo de las Secciones Clave (Abril \- Mayo 2025\)**
+
+- Creación de la sección de proyectos con estructura dinámica.
+- Implementación de formularios de contacto con validaciones básicas.
+- Desarrollo de las secciones de navegación y menú adaptable.
+- Configuración de plugins esenciales para la web (seguridad, SEO básico, formularios).
+
+#### **Versión 1.5: Optimización y Seguridad (Mayo 2025\)**
+
+- Aplicación de estrategias de optimización de rendimiento.
+- Implementación de medidas básicas de seguridad mediante plugins.
+- Optimización de la velocidad de carga y caché.
+- Pruebas en distintos dispositivos y navegadores.
+
+#### **Versión 1.6: Pruebas Finales y Ajustes (Mayo 2025\)**
+
+- Test de usuario y evaluación de la experiencia de navegación.
+- Corrección de errores y ajustes de última hora.
+- Implementación de mejoras en diseño y funcionalidad.
+- Preparación de la documentación para la presentación.
+
+#### **Versión 2.0: Despliegue y Presentación (Junio 2025\)**
+
+- Migración del sitio a un servidor definitivo.
+- Pruebas finales en producción.
+- Verificación de funcionalidades post-despliegue.
+- Preparación y presentación final del proyecto.
+
+### **Metodología de Desarrollo**
+
+Para asegurar un desarrollo ordenado y eficiente, el proyecto se desarrollará siguiendo los siguientes principios:
+
+1. **Desarrollo incremental:** Cada versión agregará nuevas funcionalidades sobre la base anterior.
+2. **Uso de Git y GitHub:** Se utilizarán ramas separadas cuando se trabaje codigo dentro del proyecto para cada versión, facilitando la organización y colaboración.
+3. **Pruebas y optimización:** Antes de finalizar cada versión, se realizarán pruebas de compatibilidad y rendimiento.
+
+### **Conclusión**
+
+La planificación de versiones y la estructura del proyecto permitirán desarrollar el **Portfolio Personal en WordPress** de forma escalonada, asegurando un resultado funcional y bien optimizado para su entrega y uso futuro.
