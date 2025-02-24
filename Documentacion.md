@@ -84,10 +84,10 @@ Este documento es una versión inicial de la definición del proyecto. A medida 
 
 ### **Introducción**
 
-Este documento define los **casos de uso** del proyecto **Portfolio Personal en WordPress**. La web no contará con sistema de autenticación ni funcionalidades que requieran registro de usuarios. Se identifican dos tipos de actores principales:
+Este documento define los casos de uso del proyecto Portfolio Personal en WordPress. La web no contará con sistema de autenticación ni funcionalidades que requieran registro de usuarios. Se identifican dos tipos de actores principales:
 
-- **Usuarios (Anónimos):** Visitantes que navegan el sitio sin necesidad de registro. Pueden interactuar con ciertas secciones de la web, como leer el blog y dejar comentarios.
-- **Admin:** El administrador del sitio, responsable de gestionar todo el contenido y la configuración del portafolio.
+- Usuarios (Anónimos): Visitantes que navegan el sitio sin necesidad de registro. Pueden interactuar con ciertas secciones de la web, como leer el blog y dejar comentarios.
+- Admin: El administrador del sitio, responsable de gestionar todo el contenido y la configuración del portafolio.
 
 ---
 
@@ -95,7 +95,7 @@ Este documento define los **casos de uso** del proyecto **Portfolio Personal en 
 
 #### **CU-01: Navegar por el sitio web**
 
-**Actor:** Usuario (Anónimo) **Descripción:** El usuario puede acceder a la web y navegar por sus distintas secciones. **Flujo principal:**
+Actor: Usuario (Anónimo) Descripción: El usuario puede acceder a la web y navegar por sus distintas secciones. Flujo principal:
 
 1. El usuario accede a la web a través de un navegador.
 2. Puede visualizar el contenido del portafolio, incluyendo la sección "Sobre mí", "Proyectos" y "Blog".
@@ -106,7 +106,7 @@ Este documento define los **casos de uso** del proyecto **Portfolio Personal en 
 
 #### **CU-02: Visualizar la información del portfolio**
 
-**Actor:** Usuario (Anónimo) **Descripción:** El usuario puede acceder a la información sobre el propietario del portafolio. **Flujo principal:**
+Actor: Usuario (Anónimo) Descripción: El usuario puede acceder a la información sobre el propietario del portafolio. Flujo principal:
 
 1. El usuario accede a la sección "Sobre mí" o "Proyectos".
 2. Se muestra información personal y profesional del administrador.
@@ -117,7 +117,7 @@ Este documento define los **casos de uso** del proyecto **Portfolio Personal en 
 
 #### **CU-03: Visualizar el blog**
 
-**Actor:** Usuario (Anónimo) **Descripción:** El usuario puede acceder y leer los artículos publicados en la sección del blog. **Flujo principal:**
+Actor: Usuario (Anónimo) Descripción: El usuario puede acceder y leer los artículos publicados en la sección del blog. Flujo principal:
 
 1. El usuario accede a la sección "Blog".
 2. Se muestra una lista de artículos publicados.
@@ -129,7 +129,7 @@ Este documento define los **casos de uso** del proyecto **Portfolio Personal en 
 
 #### **CU-04: Comentar en artículos del blog**
 
-**Actor:** Usuario (Anónimo) **Descripción:** El usuario puede dejar comentarios en los artículos del blog sin necesidad de registro. **Flujo principal:**
+Actor: Usuario (Anónimo) Descripción: El usuario puede dejar comentarios en los artículos del blog sin necesidad de registro. Flujo principal:
 
 1. El usuario accede a un artículo en la sección "Blog".
 2. En la parte inferior del artículo, encuentra un formulario de comentarios.
@@ -139,9 +139,20 @@ Este documento define los **casos de uso** del proyecto **Portfolio Personal en 
 
 ---
 
-#### **CU-05: Contactar al administrador**
+#### **CU-05: Visualizar la página de contacto**
 
-**Actor:** Usuario (Anónimo) **Descripción:** El usuario puede enviar un mensaje al administrador a través del formulario de contacto. **Flujo principal:**
+Actor: Usuario (Anónimo) Descripción: El usuario puede acceder y leer la sección de contacto de nuestro portfolio para contactar con el administrador (nosotros). También podrá contactar con el administrador a través de algún otro bloque / widget de contacto disponible en el footer del portfolio. Flujo principal:
+
+1. El usuario accede a la sección de “Contacto”.
+2. Se muestra un apartado de contacto para introducir los datos de contacto personales de la entidad o persona, junto al motivo del contacto.
+3. El usuario puede introducir los datos de contacto o puede seguir navegando por la web sin tener la obligación de responder.
+4. Fin del caso de uso
+
+---
+
+#### **CU-06: Contactar al administrador**
+
+Actor: Usuario (Anónimo) Descripción: El usuario puede enviar un mensaje al administrador a través del formulario de contacto. Flujo principal:
 
 1. El usuario accede a la sección "Contacto".
 2. Completa el formulario con su nombre, email y mensaje.
@@ -153,9 +164,9 @@ Este documento define los **casos de uso** del proyecto **Portfolio Personal en 
 
 ### **Casos de Uso para el Administrador**
 
-#### **CU-06: Gestionar información del portfolio**
+#### **CU-07: Gestionar información del portfolio**
 
-**Actor:** Admin **Descripción:** El administrador puede editar la información del portfolio (biografía, experiencia, habilidades, etc.). **Flujo principal:**
+Actor: Admin Descripción: El administrador puede editar la información del portfolio (biografía, experiencia, habilidades, etc.). Flujo principal:
 
 1. El administrador accede al panel de administración de WordPress.
 2. Selecciona la sección "Sobre mí" o "Proyectos".
@@ -165,9 +176,9 @@ Este documento define los **casos de uso** del proyecto **Portfolio Personal en 
 
 ---
 
-#### **CU-07: Gestionar los proyectos mostrados en el portafolio**
+#### **CU-08: Gestionar los proyectos mostrados en el portafolio**
 
-**Actor:** Admin **Descripción:** El administrador puede agregar, editar o eliminar proyectos del portafolio. **Flujo principal:**
+Actor: Admin Descripción: El administrador puede agregar, editar o eliminar proyectos del portafolio. Flujo principal:
 
 1. El administrador accede al panel de WordPress.
 2. Navega a la sección "Proyectos".
@@ -177,9 +188,9 @@ Este documento define los **casos de uso** del proyecto **Portfolio Personal en 
 
 ---
 
-#### **CU-08: Gestionar los artículos del blog**
+#### **CU-09: Gestionar los artículos del blog**
 
-**Actor:** Admin **Descripción:** El administrador puede escribir, editar o eliminar artículos del blog. **Flujo principal:**
+Actor: Admin Descripción: El administrador puede escribir, editar o eliminar artículos del blog. Flujo principal:
 
 1. El administrador accede a la sección "Entradas" en el panel de administración.
 2. Puede agregar un nuevo artículo, modificar uno existente o eliminar un artículo.
@@ -188,9 +199,9 @@ Este documento define los **casos de uso** del proyecto **Portfolio Personal en 
 
 ---
 
-#### **CU-09: Moderar comentarios en el blog**
+#### **CU-10: Moderar comentarios en el blog**
 
-**Actor:** Admin **Descripción:** El administrador puede aprobar, eliminar o marcar como spam los comentarios realizados por los usuarios en los artículos del blog. **Flujo principal:**
+Actor: Admin Descripción: El administrador puede aprobar, eliminar o marcar como spam los comentarios realizados por los usuarios en los artículos del blog. Flujo principal:
 
 1. El administrador accede a la sección "Comentarios" en el panel de WordPress.
 2. Revisa los comentarios pendientes de aprobación.
@@ -199,9 +210,9 @@ Este documento define los **casos de uso** del proyecto **Portfolio Personal en 
 
 ---
 
-#### **CU-10: Configurar y optimizar el sitio web**
+#### **CU-11: Configurar y optimizar el sitio web**
 
-**Actor:** Admin **Descripción:** El administrador puede realizar ajustes en la configuración del sitio, instalar plugins y optimizar el rendimiento. **Flujo principal:**
+Actor: Admin Descripción: El administrador puede realizar ajustes en la configuración del sitio, instalar plugins y optimizar el rendimiento. Flujo principal:
 
 1. El administrador accede a la configuración de WordPress.
 2. Ajusta parámetros del sitio, como título, descripciones, enlaces permanentes, etc.
@@ -211,9 +222,9 @@ Este documento define los **casos de uso** del proyecto **Portfolio Personal en 
 
 ---
 
-#### **CU-11: Modificar la información personal**
+#### **CU-12: Modificar la información personal**
 
-**Actor:** Admin **Descripción:** El administrador puede actualizar su información personal, incluyendo currículum vitae, lugar de residencia, información de contacto, nombre y apellidos. **Flujo principal:**
+Actor: Admin Descripción: El administrador puede actualizar su información personal, incluyendo currículum vitae, lugar de residencia, información de contacto, nombre y apellidos. Flujo principal:
 
 1. El administrador accede al panel de administración de WordPress.
 2. Selecciona la sección de información personal.
@@ -223,9 +234,9 @@ Este documento define los **casos de uso** del proyecto **Portfolio Personal en 
 
 ---
 
-#### **CU-12: Añadir funcionalidades al tema**
+#### **CU-13: Añadir funcionalidades al tema**
 
-**Actor:** Admin **Descripción:** El administrador puede agregar nuevas funcionalidades al tema de WordPress "MyPortfolio" desarrollado para la web. **Flujo principal:**
+Actor: Admin Descripción: El administrador puede agregar nuevas funcionalidades al tema de WordPress "MyPortfolio" desarrollado para la web. Flujo principal:
 
 1. El administrador accede al código fuente del tema.
 2. Modifica o agrega funcionalidades necesarias.
@@ -235,9 +246,9 @@ Este documento define los **casos de uso** del proyecto **Portfolio Personal en 
 
 ---
 
-#### **CU-13: Añadir tecnologías utilizadas o conocimientos adquiridos**
+#### **CU-14: Añadir tecnologías utilizadas o conocimientos adquiridos**
 
-**Actor:** Admin **Descripción:** El administrador puede actualizar la lista de tecnologías utilizadas y conocimientos adquiridos en su trayectoria profesional. **Flujo principal:**
+Actor: Admin Descripción: El administrador puede actualizar la lista de tecnologías utilizadas y conocimientos adquiridos en su trayectoria profesional. Flujo principal:
 
 1. El administrador accede a la sección de tecnologías o conocimientos.
 2. Añade, edita o elimina elementos de la lista.
@@ -246,9 +257,9 @@ Este documento define los **casos de uso** del proyecto **Portfolio Personal en 
 
 ---
 
-#### **CU-14: Publicar artículos en el apartado noticias**
+#### **CU-15: Publicar artículos en el apartado noticias**
 
-**Actor:** Admin **Descripción:** El administrador puede publicar artículos en el blog sobre nuevas noticias relacionadas con su vida profesional o logros. **Flujo principal:**
+Actor: Admin Descripción: El administrador puede publicar artículos en el blog sobre nuevas noticias relacionadas con su vida profesional o logros. Flujo principal:
 
 1. El administrador accede a la sección "Entradas" en el panel de administración.
 2. Crea una nueva entrada y escribe el contenido.
@@ -258,9 +269,9 @@ Este documento define los **casos de uso** del proyecto **Portfolio Personal en 
 
 ---
 
-#### **CU-15: Responder a entidades o personas que contacten al administrador**
+#### **CU-16: Responder a entidades o personas que contacten al administrador**
 
-**Actor:** Admin **Descripción:** El administrador puede responder manualmente a mensajes recibidos a través del formulario de contacto (esta acción no forma parte de la web en sí, pero es parte del flujo de interacción). **Flujo principal:**
+Actor: Admin Descripción: El administrador puede responder manualmente a mensajes recibidos a través del formulario de contacto (esta acción no forma parte de la web en sí, pero es parte del flujo de interacción). Flujo principal:
 
 1. El administrador recibe una notificación de contacto.
 2. Revisa el mensaje recibido en su correo electrónico.
@@ -269,9 +280,9 @@ Este documento define los **casos de uso** del proyecto **Portfolio Personal en 
 
 ---
 
-#### **CU-16: Modificar el apartado de FAQ's**
+#### **CU-17: Modificar el apartado de FAQ's**
 
-**Actor:** Admin **Descripción:** El administrador puede modificar la sección de preguntas frecuentes en función de las dudas recibidas sobre su trabajo o su perfil. **Flujo principal:**
+Actor: Admin Descripción: El administrador puede modificar la sección de preguntas frecuentes en función de las dudas recibidas sobre su trabajo o su perfil. Flujo principal:
 
 1. El administrador accede a la sección de FAQ's en el panel de administración.
 2. Añade, edita o elimina preguntas y respuestas.
@@ -284,10 +295,6 @@ Este apartado presenta los **diagramas de casos de uso** del proyecto **Portfoli
 
 A continuación, se presentan los diagramas de casos de uso correspondientes a cada actor, detallando sus interacciones dentro del sistema.
 
-1. **Usuarios Anónimos:**
+Diagrama de casos de uso:
 
-![Diagrama casos de uso Usuarios Anonimos](./images/diagramas/casos_uso/diagramaCasosUsoUsuarios.png)
-
-2. **Administrador:**
-
-![Diagrama casos de uso Administrador](./images/diagramas/casos_uso/diagramaCasosUsoAdmin.png)
+![Diagrama de casos de uso](./images/diagramas/casos_uso/diagramaCasosDeUso.png)
