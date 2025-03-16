@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Personal - ¿Quién soy?</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts: Poppins -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Estilos personalizados -->
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(
+          to bottom,
+          #1a0b2e,
+          #010418
+        ); /* Gradiente oscurecido */
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+      }
+      .sidebar {
+        width: 250px;
+        background-color: #120822;
+        padding: 20px;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+      }
+      .sidebar img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        display: block;
+        margin: 0 auto 20px;
+      }
+      .sidebar nav ul {
+        list-style: none;
+        padding: 0;
+      }
+      .sidebar nav ul li {
+        margin: 20px 0; /* Aumentamos el margen entre los elementos del menú */
+      }
+      .sidebar nav ul li a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 1.1rem; /* Aumentamos el tamaño del texto del menú */
+      }
+      .sidebar nav ul li a:hover {
+        color: #553bfb;
+      }
+      .main-content {
+        margin-left: 250px;
+        padding: 80px 0 0 0; /* Se agrega padding-top para separar del top */
+        flex-grow: 1;
+      }
+      .footer {
+        margin-top: 250px;
+        background-color: #04051a; /* Color del footer */
+        padding: 100px 0 20px; /* Añadimos un padding-top alto */
+        text-align: center;
+        width: 100%;
+        position: relative;
+      }
+      .menu-toggle {
+        display: none;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: #553bfb;
+        border: none;
+        color: #ffffff;
+        padding: 10px 15px;
+        font-size: 1.2rem;
+        z-index: 1001;
+        cursor: pointer;
+      }
+      .cta-contacto {
+        background-color: #376aed;
+        padding: 40px 20px;
+        text-align: center;
+        margin-top: -250px; /* Ajustamos el margen negativo */
+        margin-bottom: 40px; /* Espacio entre el CTA y el texto del footer */
+        position: relative;
+        z-index: 1;
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+      .cta-contacto h2 {
+        color: #ffffff;
+        margin-bottom: 20px;
+        flex: 1 1 100%;
+      }
+      .cta-contacto form {
+        flex: 1 1 50%;
+        margin-left: 20px;
+      }
+      .cta-contacto form input,
+      .cta-contacto form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: none;
+        border-radius: 5px;
+      }
+      .cta-contacto form button {
+        background-color: #553bfb;
+        color: #ffffff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .card-container {
+        display: flex;
+        gap: 20px; /* Espacio entre las cards */
+        flex-wrap: wrap;
+        justify-content: flex-start; /* Las cards no se centran */
+      }
+      .card {
+        background-color: #05071a;
+        border: none;
+        margin-bottom: 20px;
+        flex: 1 1 calc(33.333% - 40px); /* Ajuste para 3 cards por fila */
+        max-width: calc(33.333% - 40px); /* Ajuste para 3 cards por fila */
+      }
+      .card-body {
+        padding: 20px;
+      }
+      .card-title {
+        color: #ffffff; /* Títulos en blanco */
+        font-size: 1.5rem;
+      }
+      .card-text {
+        color: #ffffff;
+      }
+      .intereses-card-container {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      .intereses-card {
+        background-color: #05071a;
+        border: none;
+        margin-bottom: 20px;
+        flex: 1 1 calc(50% - 20px); /* 2 cards por fila en PC */
+        max-width: calc(50% - 20px);
+      }
+      .section {
+        padding: 40px 0;
+      }
+      .soft-skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+      .soft-skills-item {
+        background-color: #1a0b2e;
+        padding: 20px;
+        border-radius: 10px;
+        flex: 1 1 calc(50% - 20px);
+        text-align: center;
+      }
+      .objetivos-section {
+        background-color: #1a0b2e;
+        padding: 40px 20px;
+        margin: 40px 0;
+        border-radius: 10px;
+      }
+      .objetivos-list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .objetivos-item {
+        background-color: #120822;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+      }
+      @media (max-width: 992px) {
+        /* Ajustamos la vista móvil para tablets */
+        .sidebar {
+          transform: translateX(-100%);
+          transition: transform 0.3s ease;
+        }
+        .sidebar.active {
+          transform: translateX(0);
+        }
+        .main-content {
+          margin-left: 0;
+        }
+        .menu-toggle {
+          display: block;
+        }
+        .cta-contacto {
+          width: 90%;
+        }
+        .card {
+          flex: 1 1 calc(50% - 20px); /* 2 cards por fila en tablet */
+          max-width: calc(50% - 20px);
+        }
+        .intereses-card {
+          flex: 1 1 100%; /* 1 card por fila en móvil */
+          max-width: 100%;
+        }
+      }
+      @media (max-width: 576px) {
+        .card {
+          flex: 1 1 100%; /* 1 card por fila en móvil */
+          max-width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Botón para abrir/cerrar el menú en móviles/tablets -->
+    <button class="menu-toggle" id="menuToggle">☰</button>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <img src="https://via.placeholder.com/150" alt="Tu Nombre" />
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="quien-soy.html">¿Quién soy?</a></li>
+          <li><a href="curriculum.html">Curriculum</a></li>
+          <li><a href="proyectos.html">Proyectos</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Sección de Introducción Personal -->
+      <section class="section">
+        <div class="container">
+          <h1>Sobre mi</h1>
+          <p>
+            Soy [Tu nombre], un apasionado del desarrollo web y la tecnología.
+            Actualmente estoy cursando el segundo año de Desarrollo de
+            Aplicaciones Web (DAW) y me especializo en crear soluciones
+            digitales innovadoras y eficientes. Mi interés por la inteligencia
+            artificial y su aplicación en el desarrollo web me ha llevado a
+            explorar nuevas formas de integrar tecnologías avanzadas en
+            proyectos reales.
+          </p>
+        </div>
+      </section>
+
+      <!-- Sección de Formación y Habilidades Técnicas -->
+      <section class="section">
+        <div class="container">
+          <h2>Formación y Habilidades Técnicas</h2>
+          <div class="card-container">
+            <!-- Card 1 -->
+            <div
+              class="card"
+              data-bs-toggle="modal"
+              data-bs-target="#modalFormacion1"
+            >
+              <div class="card-body">
+                <h5 class="card-title">Grado Superior en DAW</h5>
+                <p class="card-text">
+                  Actualmente cursando el segundo año de Desarrollo de
+                  Aplicaciones Web.
+                </p>
+              </div>
+            </div>
+            <!-- Card 2 -->
+            <div
+              class="card"
+              data-bs-toggle="modal"
+              data-bs-target="#modalFormacion2"
+            >
+              <div class="card-body">
+                <h5 class="card-title">Curso de Inteligencia Artificial</h5>
+                <p class="card-text">
+                  Exploré conceptos como machine learning y procesamiento de
+                  datos.
+                </p>
+              </div>
+            </div>
+            <!-- Card 3 -->
+            <div
+              class="card"
+              data-bs-toggle="modal"
+              data-bs-target="#modalFormacion3"
+            >
+              <div class="card-body">
+                <h5 class="card-title">Habilidades Técnicas</h5>
+                <p class="card-text">
+                  HTML, CSS, JavaScript, PHP, Python, React, Angular, Laravel,
+                  MySQL, MongoDB, Git, GitHub.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Modales para Formación -->
+      <!-- Modal 1: Grado Superior en DAW -->
+      <div class="modal fade" id="modalFormacion1" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" style="color: #000">
+                Grado Superior en DAW
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+            <div class="modal-body" style="color: #000">
+              <p>
+                Información detallada sobre el Grado Superior en Desarrollo de
+                Aplicaciones Web.
+              </p>
+              <ul>
+                <li>Desarrollo Frontend y Backend</li>
+                <li>Gestión de Bases de Datos</li>
+                <li>Desarrollo de Aplicaciones Móviles</li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-dismiss="modal"
+              >
+                Cerrar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal 2: Curso de Inteligencia Artificial -->
+      <div class="modal fade" id="modalFormacion2" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" style="color: #000">
+                Curso de Inteligencia Artificial
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+            <div class="modal-body" style="color: #000">
+              <p>
+                Información detallada sobre el Curso de Inteligencia Artificial.
+              </p>
+              <ul>
+                <li>Introducción a la IA</li>
+                <li>Redes Neuronales</li>
+                <li>Aprendizaje Automático</li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-dismiss="modal"
+              >
+                Cerrar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal 3: Habilidades Técnicas -->
+      <div class="modal fade" id="modalFormacion3" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" style="color: #000">
+                Habilidades Técnicas
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+            <div class="modal-body" style="color: #000">
+              <p>
+                Información detallada sobre las habilidades técnicas adquiridas.
+              </p>
+              <ul>
+                <li>HTML, CSS, JavaScript, PHP, Python</li>
+                <li>React, Angular, Laravel</li>
+                <li>MySQL, MongoDB</li>
+                <li>Git, GitHub</li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-dismiss="modal"
+              >
+                Cerrar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sección de Intereses y Enfoque Personal -->
+      <section class="section">
+        <div class="container">
+          <h2>Intereses y Enfoque Personal</h2>
+          <div class="intereses-card-container">
+            <!-- Card 1 -->
+            <div class="intereses-card">
+              <div class="card-body">
+                <h5 class="card-title">Desarrollo Full-Stack</h5>
+                <p class="card-text">
+                  Combinando frontend y backend para crear soluciones completas.
+                </p>
+              </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="intereses-card">
+              <div class="card-body">
+                <h5 class="card-title">Inteligencia Artificial</h5>
+                <p class="card-text">
+                  Explorando cómo la IA puede mejorar la experiencia del
+                  usuario.
+                </p>
+              </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="intereses-card">
+              <div class="card-body">
+                <h5 class="card-title">Diseño UX/UI</h5>
+                <p class="card-text">
+                  Creación de interfaces intuitivas y atractivas.
+                </p>
+              </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="intereses-card">
+              <div class="card-body">
+                <h5 class="card-title">Optimización SEO</h5>
+                <p class="card-text">
+                  Mejora del posicionamiento en buscadores.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección de Soft Skills -->
+      <section class="soft-skills-section">
+        <div class="container">
+          <h2>Soft Skills</h2>
+          <div class="soft-skills-list">
+            <div class="soft-skills-item">
+              <h5>Trabajo en Equipo</h5>
+              <p>Colaboración efectiva para el éxito de los proyectos.</p>
+            </div>
+            <div class="soft-skills-item">
+              <h5>Aprendizaje Rápido</h5>
+              <p>Siempre dispuesto a aprender y adaptarme a nuevos desafíos.</p>
+            </div>
+            <div class="soft-skills-item">
+              <h5>Resolución de Problemas</h5>
+              <p>Enfoque creativo para resolver problemas complejos.</p>
+            </div>
+            <div class="soft-skills-item">
+              <h5>Comunicación Efectiva</h5>
+              <p>Claridad y precisión en la comunicación.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección de Objetivos a Futuro -->
+      <section class="objetivos-section">
+        <div class="container">
+          <h2>Objetivos a Futuro</h2>
+          <div class="objetivos-list">
+            <div class="objetivos-item">
+              <h5>Corto Plazo</h5>
+              <p>
+                Ampliar mis conocimientos en desarrollo web e inteligencia
+                artificial.
+              </p>
+            </div>
+            <div class="objetivos-item">
+              <h5>Largo Plazo</h5>
+              <p>
+                Liderar equipos de desarrollo y crear soluciones impactantes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <!-- CTA de Contacto -->
+        <section class="cta-contacto">
+          <div class="container">
+            <h2>¿Buscas algo más personalizado? ¡Contáctanos!</h2>
+            <form>
+              <input type="text" placeholder="Nombre" required />
+              <input type="email" placeholder="Correo Electrónico" required />
+              <textarea
+                placeholder="Describa el motivo del contacto"
+                required
+              ></textarea>
+              <button type="submit">ENVIAR</button>
+            </form>
+          </div>
+        </section>
+
+        <div class="container">
+          <p>&copy; 2023 [Tu Nombre]. Todos los derechos reservados.</p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Script para manejar el menú desplegable -->
+    <script>
+      document
+        .getElementById("menuToggle")
+        .addEventListener("click", function () {
+          const sidebar = document.getElementById("sidebar");
+          sidebar.classList.toggle("active");
+        });
+    </script>
+  </body>
+</html>

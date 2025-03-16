@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Personal - Inicio</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts: Poppins -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Estilos personalizados -->
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(
+          to bottom,
+          #1a0b2e,
+          #010418
+        ); /* Gradiente oscurecido */
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+      }
+      .sidebar {
+        width: 250px;
+        background-color: #120822;
+        padding: 20px;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+      }
+      .sidebar img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        display: block;
+        margin: 0 auto 20px;
+      }
+      .sidebar nav ul {
+        list-style: none;
+        padding: 0;
+      }
+      .sidebar nav ul li {
+        margin: 20px 0; /* Aumentamos el margen entre los elementos del menú */
+      }
+      .sidebar nav ul li a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 1.1rem; /* Aumentamos el tamaño del texto del menú */
+      }
+      .sidebar nav ul li a:hover {
+        color: #553bfb;
+      }
+      .main-content {
+        margin-left: 250px;
+        padding: 0;
+        flex-grow: 1;
+      }
+      .btn-primary {
+        background-color: #553bfb;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1rem;
+      }
+      .section {
+        padding: 40px 0;
+      }
+      .section h2 {
+        color: #ffffff; /* Títulos en blanco */
+      }
+      .skills-section {
+        padding: 40px 0;
+      }
+      .footer {
+        margin-top: 250px;
+        background-color: #04051a; /* Color del footer */
+        padding: 100px 0 20px; /* Añadimos un padding-top alto */
+        text-align: center;
+        width: 100%;
+        position: relative;
+      }
+      .menu-toggle {
+        display: none;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: #553bfb;
+        border: none;
+        color: #ffffff;
+        padding: 10px 15px;
+        font-size: 1.2rem;
+        z-index: 1001;
+        cursor: pointer;
+      }
+      .banner {
+        padding: 80px 0;
+      }
+      .banner .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 0 20px;
+      }
+      .banner-text {
+        max-width: 50%;
+      }
+      .banner-text h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #ffffff; /* Título en blanco */
+      }
+      .banner-text p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+      }
+      .banner img {
+        width: 300px;
+        height: auto;
+        border-radius: 10px;
+      }
+      .resumen-personal,
+      .curriculum,
+      .blog {
+        padding: 40px 20px;
+      }
+      .cta-contacto {
+        background-color: #376aed;
+        padding: 40px 20px;
+        text-align: center;
+        margin-top: -250px; /* Ajustamos el margen negativo */
+        margin-bottom: 40px; /* Espacio entre el CTA y el texto del footer */
+        position: relative;
+        z-index: 1;
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+      .cta-contacto h2 {
+        color: #ffffff;
+        margin-bottom: 20px;
+        flex: 1 1 100%;
+      }
+      .cta-contacto .btn {
+        background-color: #553bfb;
+        color: #ffffff;
+        padding: 10px 20px;
+        font-size: 1rem;
+      }
+      .cta-contacto form {
+        flex: 1 1 50%;
+        margin-left: 20px;
+      }
+      .cta-contacto form input,
+      .cta-contacto form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: none;
+        border-radius: 5px;
+      }
+      .cta-contacto form button {
+        background-color: #553bfb;
+        color: #ffffff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .card-container {
+        display: flex;
+        gap: 20px; /* Espacio entre las cards */
+        flex-wrap: wrap;
+        justify-content: flex-start; /* Las cards no se centran */
+      }
+      .card {
+        background-color: #05071a;
+        border: none;
+        margin-bottom: 20px;
+        flex: 1 1 calc(33.333% - 40px); /* Ajuste para 3 cards por fila */
+        max-width: calc(33.333% - 40px); /* Ajuste para 3 cards por fila */
+      }
+      .card img {
+        border-radius: 10px 10px 0 0;
+      }
+      .card-body {
+        padding: 20px;
+      }
+      .card-title {
+        color: #ffffff; /* Títulos en blanco */
+        font-size: 1.5rem;
+      }
+      .card-text {
+        color: #ffffff;
+      }
+      /* Estilos específicos para las cards de "Titulaciones Oficiales" y "Información Relevante" */
+      .titulaciones-container .card,
+      .informacion-relevante-container .card {
+        flex: 1 1 100%; /* Ocupa todo el ancho disponible */
+        max-width: 100%; /* Ocupa todo el ancho disponible */
+        margin-bottom: 20px; /* Espacio entre las cards */
+      }
+      @media (max-width: 992px) {
+        /* Ajustamos la vista móvil para tablets */
+        .sidebar {
+          transform: translateX(-100%);
+          transition: transform 0.3s ease;
+        }
+        .sidebar.active {
+          transform: translateX(0);
+        }
+        .main-content {
+          margin-left: 0;
+        }
+        .menu-toggle {
+          display: block;
+        }
+        .banner .container {
+          flex-direction: column;
+          text-align: center;
+        }
+        .banner-text {
+          max-width: 100%;
+          margin-bottom: 30px;
+        }
+        .banner img {
+          width: 100%;
+          max-width: 300px;
+        }
+        .cta-contacto {
+          width: 90%;
+        }
+        .card {
+          flex: 1 1 calc(50% - 20px); /* 2 cards por fila en tablet */
+          max-width: calc(50% - 20px);
+        }
+      }
+      @media (max-width: 576px) {
+        .card {
+          flex: 1 1 100%; /* 1 card por fila en móvil */
+          max-width: 100%;
+        }
+      }
+      /* Estilos para las cards de la sección de blog */
+      .blog .card {
+        background-color: #1a0b2e; /* Color de fondo para las cards */
+        border: none; /* Eliminamos el borde por defecto */
+        border-radius: 10px; /* Bordes redondeados */
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto hover suave */
+      }
+      .blog .card:hover {
+        transform: translateY(-5px); /* Efecto de levitación al hacer hover */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra al hacer hover */
+      }
+      .blog .card-img-top {
+        border-radius: 10px 10px 0 0; /* Bordes redondeados solo en la parte superior */
+      }
+      .blog .card-body {
+        padding: 20px; /* Espaciado interno */
+      }
+      .blog .card-title {
+        color: #ffffff; /* Color del título */
+        font-size: 1.25rem; /* Tamaño del título */
+        margin-bottom: 10px; /* Espaciado inferior */
+      }
+      .blog .card-text {
+        color: #d1d1d1; /* Color del texto */
+        font-size: 0.9rem; /* Tamaño del texto */
+        margin-bottom: 15px; /* Espaciado inferior */
+      }
+      .blog .btn-primary {
+        background-color: #553bfb; /* Color del botón */
+        border: none; /* Sin borde */
+        border-radius: 5px; /* Bordes redondeados */
+        padding: 8px 16px; /* Espaciado interno */
+        font-size: 0.9rem; /* Tamaño del texto */
+        transition: background-color 0.3s ease; /* Transición suave */
+      }
+      .blog .btn-primary:hover {
+        background-color: #3a2aa3; /* Cambio de color al hacer hover */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Botón para abrir/cerrar el menú en móviles/tablets -->
+    <button class="menu-toggle" id="menuToggle">☰</button>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <img src="https://via.placeholder.com/150" alt="Tu Nombre" />
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="quien-soy.html">¿Quién soy?</a></li>
+          <li><a href="curriculum.html">Curriculum</a></li>
+          <li><a href="proyectos.html">Proyectos</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Banner -->
+      <section class="banner">
+        <div class="container">
+          <div class="banner-text">
+            <h1>Hola, soy [Tu Nombre]</h1>
+            <p class="lead">
+              Diseñador web y desarrollador con pasión por crear experiencias
+              digitales únicas.
+            </p>
+            <a href="quien-soy.html" class="btn btn-primary">Conóceme más</a>
+          </div>
+          <img src="https://via.placeholder.com/300" alt="Tu Nombre" />
+        </div>
+      </section>
+
+      <!-- Resumen Personal -->
+      <section class="resumen-personal">
+        <div class="container">
+          <h2>¿Quién soy?</h2>
+          <p>
+            Soy un apasionado del desarrollo web y la tecnología, con
+            experiencia en la creación de soluciones digitales innovadoras. Mi
+            enfoque se centra en ofrecer experiencias de usuario excepcionales y
+            en construir proyectos que marquen la diferencia.
+          </p>
+        </div>
+      </section>
+
+      <!-- Sección de Información Relevante -->
+      <section class="curriculum">
+        <div class="container">
+          <h2>Información Relevante</h2>
+          <div class="informacion-relevante-container">
+            <!-- Card 1 -->
+            <div
+              class="card"
+              data-bs-toggle="modal"
+              data-bs-target="#modalExperiencia1"
+            >
+              <div class="card-body">
+                <h5 class="card-title">Desarrollador Web en Empresa X</h5>
+                <p class="card-text">2020 a 2023</p>
+                <p class="card-text">
+                  Desarrollo y mantenimiento de aplicaciones web y móviles.
+                </p>
+              </div>
+            </div>
+            <!-- Card 2 -->
+            <div
+              class="card"
+              data-bs-toggle="modal"
+              data-bs-target="#modalEducacion1"
+            >
+              <div class="card-body">
+                <h5 class="card-title">
+                  Grado Superior en Desarrollo de Aplicaciones Web
+                </h5>
+                <p class="card-text">2018 a 2020</p>
+                <p class="card-text">
+                  Formación especializada en desarrollo frontend y backend.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Modales para Información Relevante -->
+      <!-- Modal 1: Experiencia -->
+      <div class="modal fade" id="modalExperiencia1" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" style="color: #000">
+                Desarrollador Web en Empresa X
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+            <div class="modal-body" style="color: #000">
+              <p>
+                Información detallada sobre la experiencia como Desarrollador
+                Web en Empresa X.
+              </p>
+              <ul>
+                <li>Desarrollo de aplicaciones web y móviles.</li>
+                <li>Colaboración en proyectos de equipo.</li>
+                <li>Optimización de rendimiento y seguridad.</li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-dismiss="modal"
+              >
+                Cerrar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal 2: Educación -->
+      <div class="modal fade" id="modalEducacion1" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" style="color: #000">
+                Grado Superior en Desarrollo de Aplicaciones Web
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+            <div class="modal-body" style="color: #000">
+              <p>
+                Información detallada sobre el Grado Superior en Desarrollo de
+                Aplicaciones Web.
+              </p>
+              <ul>
+                <li>Desarrollo Frontend y Backend.</li>
+                <li>Gestión de Bases de Datos.</li>
+                <li>Desarrollo de Aplicaciones Móviles.</li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-dismiss="modal"
+              >
+                Cerrar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sección de proyectos destacados -->
+      <section class="section">
+        <div class="container">
+          <h2 class="text-center mb-4">Proyectos Destacados</h2>
+          <div class="card-container">
+            <div class="card">
+              <img
+                src="https://via.placeholder.com/300x200"
+                class="card-img-top"
+                alt="Proyecto 1"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Proyecto 1</h5>
+                <p class="card-text">Descripción breve del proyecto.</p>
+                <a href="proyecto-ejemplo.html" class="btn btn-primary"
+                  >Ver detalles</a
+                >
+              </div>
+            </div>
+            <div class="card">
+              <img
+                src="https://via.placeholder.com/300x200"
+                class="card-img-top"
+                alt="Proyecto 2"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Proyecto 2</h5>
+                <p class="card-text">Descripción breve del proyecto.</p>
+                <a href="proyecto-ejemplo.html" class="btn btn-primary"
+                  >Ver detalles</a
+                >
+              </div>
+            </div>
+            <div class="card">
+              <img
+                src="https://via.placeholder.com/300x200"
+                class="card-img-top"
+                alt="Proyecto 3"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Proyecto 3</h5>
+                <p class="card-text">Descripción breve del proyecto.</p>
+                <a href="proyecto-ejemplo.html" class="btn btn-primary"
+                  >Ver detalles</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección de titulaciones oficiales -->
+      <section class="section skills-section">
+        <div class="container">
+          <h2 class="text-center mb-4">Titulaciones Oficiales</h2>
+          <div class="titulaciones-container">
+            <div
+              class="card"
+              data-bs-toggle="modal"
+              data-bs-target="#modalTitulo1"
+            >
+              <div class="card-body">
+                <h5 class="card-title">
+                  Grado Superior en Desarrollo y Aplicaciones Web
+                </h5>
+                <p class="card-text">Haz clic para ver más detalles.</p>
+              </div>
+            </div>
+            <div
+              class="card"
+              data-bs-toggle="modal"
+              data-bs-target="#modalTitulo2"
+            >
+              <div class="card-body">
+                <h5 class="card-title">Curso de Inteligencia Artificial</h5>
+                <p class="card-text">Haz clic para ver más detalles.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Modales para titulaciones -->
+      <!-- Modal 1 -->
+      <div class="modal fade" id="modalTitulo1" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" style="color: #000">
+                Grado Superior en Desarrollo y Aplicaciones Web
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+            <div class="modal-body" style="color: #000">
+              <p>
+                Información detallada sobre el Grado Superior en Desarrollo y
+                Aplicaciones Web.
+              </p>
+              <ul>
+                <li>Desarrollo Frontend y Backend</li>
+                <li>Gestión de Bases de Datos</li>
+                <li>Desarrollo de Aplicaciones Móviles</li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-dismiss="modal"
+              >
+                Cerrar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal 2 -->
+      <div class="modal fade" id="modalTitulo2" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" style="color: #000">
+                Curso de Inteligencia Artificial
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+            <div class="modal-body" style="color: #000">
+              <p>
+                Información detallada sobre el Curso de Inteligencia Artificial.
+              </p>
+              <ul>
+                <li>Introducción a la IA</li>
+                <li>Redes Neuronales</li>
+                <li>Aprendizaje Automático</li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-dismiss="modal"
+              >
+                Cerrar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sección de últimas entradas del blog -->
+      <section class="blog">
+        <div class="container">
+          <h2 class="text-center mb-4">Últimas Entradas del Blog</h2>
+          <div class="card-container">
+            <!-- Card 1 -->
+            <div class="card">
+              <img
+                src="https://via.placeholder.com/300x200"
+                class="card-img-top"
+                alt="Blog 1"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Entrada 1</h5>
+                <p class="card-text">
+                  Descripción breve de la entrada del blog.
+                </p>
+                <a href="#" class="btn btn-primary">Leer más</a>
+              </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="card">
+              <img
+                src="https://via.placeholder.com/300x200"
+                class="card-img-top"
+                alt="Blog 2"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Entrada 2</h5>
+                <p class="card-text">
+                  Descripción breve de la entrada del blog.
+                </p>
+                <a href="#" class="btn btn-primary">Leer más</a>
+              </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="card">
+              <img
+                src="https://via.placeholder.com/300x200"
+                class="card-img-top"
+                alt="Blog 3"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Entrada 3</h5>
+                <p class="card-text">
+                  Descripción breve de la entrada del blog.
+                </p>
+                <a href="#" class="btn btn-primary">Leer más</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <!-- CTA de Contacto -->
+        <section class="cta-contacto">
+          <div class="container">
+            <h2>¿Buscas algo más personalizado? ¡Contáctanos!</h2>
+            <form>
+              <input type="text" placeholder="Nombre" required />
+              <input type="email" placeholder="Correo Electrónico" required />
+              <textarea
+                placeholder="Describa el motivo del contacto"
+                required
+              ></textarea>
+              <button type="submit">ENVIAR</button>
+            </form>
+          </div>
+        </section>
+
+        <div class="container">
+          <p>&copy; 2023 [Tu Nombre]. Todos los derechos reservados.</p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Script para manejar el menú desplegable -->
+    <script>
+      document
+        .getElementById("menuToggle")
+        .addEventListener("click", function () {
+          const sidebar = document.getElementById("sidebar");
+          sidebar.classList.toggle("active");
+        });
+    </script>
+  </body>
+</html>

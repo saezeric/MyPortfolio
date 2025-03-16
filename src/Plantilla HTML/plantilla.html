@@ -1,0 +1,211 @@
+<!-- Esta es la plantilla para construir las paginas de mi web -->
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Personal - Inicio</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts: Poppins -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Estilos personalizados -->
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(
+          to bottom,
+          #1a0b2e,
+          #010418
+        ); /* Gradiente oscurecido */
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+      }
+      .sidebar {
+        width: 250px;
+        background-color: #120822;
+        padding: 20px;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+      }
+      .sidebar img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        display: block;
+        margin: 0 auto 20px;
+      }
+      .sidebar nav ul {
+        list-style: none;
+        padding: 0;
+      }
+      .sidebar nav ul li {
+        margin: 20px 0; /* Aumentamos el margen entre los elementos del menú */
+      }
+      .sidebar nav ul li a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 1.1rem; /* Aumentamos el tamaño del texto del menú */
+      }
+      .sidebar nav ul li a:hover {
+        color: #553bfb;
+      }
+      .main-content {
+        margin-left: 250px;
+        padding: 0;
+        flex-grow: 1;
+      }
+      .footer {
+        margin-top: 250px;
+        background-color: #04051a; /* Color del footer */
+        padding: 100px 0 20px; /* Añadimos un padding-top alto */
+        text-align: center;
+        width: 100%;
+        position: relative;
+      }
+      .menu-toggle {
+        display: none;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: #553bfb;
+        border: none;
+        color: #ffffff;
+        padding: 10px 15px;
+        font-size: 1.2rem;
+        z-index: 1001;
+        cursor: pointer;
+      }
+      .cta-contacto {
+        background-color: #376aed;
+        padding: 40px 20px;
+        text-align: center;
+        margin-top: -250px; /* Ajustamos el margen negativo */
+        margin-bottom: 40px; /* Espacio entre el CTA y el texto del footer */
+        position: relative;
+        z-index: 1;
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+      .cta-contacto h2 {
+        color: #ffffff;
+        margin-bottom: 20px;
+        flex: 1 1 100%;
+      }
+      .cta-contacto form {
+        flex: 1 1 50%;
+        margin-left: 20px;
+      }
+      .cta-contacto form input,
+      .cta-contacto form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: none;
+        border-radius: 5px;
+      }
+      .cta-contacto form button {
+        background-color: #553bfb;
+        color: #ffffff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      @media (max-width: 992px) {
+        /* Ajustamos la vista móvil para tablets */
+        .sidebar {
+          transform: translateX(-100%);
+          transition: transform 0.3s ease;
+        }
+        .sidebar.active {
+          transform: translateX(0);
+        }
+        .main-content {
+          margin-left: 0;
+        }
+        .menu-toggle {
+          display: block;
+        }
+        .cta-contacto {
+          width: 90%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Botón para abrir/cerrar el menú en móviles/tablets -->
+    <button class="menu-toggle" id="menuToggle">☰</button>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <img src="https://via.placeholder.com/150" alt="Tu Nombre" />
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="quien-soy.html">¿Quién soy?</a></li>
+          <li><a href="curriculum.html">Curriculum</a></li>
+          <li><a href="proyectos.html">Proyectos</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Footer -->
+      <footer class="footer">
+        <!-- CTA de Contacto -->
+        <section class="cta-contacto">
+          <div class="container">
+            <h2>¿Buscas algo más personalizado? ¡Contáctanos!</h2>
+            <form>
+              <input type="text" placeholder="Nombre" required />
+              <input type="email" placeholder="Correo Electrónico" required />
+              <textarea
+                placeholder="Describa el motivo del contacto"
+                required
+              ></textarea>
+              <button type="submit">ENVIAR</button>
+            </form>
+          </div>
+        </section>
+
+        <div class="container">
+          <p>&copy; 2023 [Tu Nombre]. Todos los derechos reservados.</p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Script para manejar el menú desplegable -->
+    <script>
+      document
+        .getElementById("menuToggle")
+        .addEventListener("click", function () {
+          const sidebar = document.getElementById("sidebar");
+          sidebar.classList.toggle("active");
+        });
+    </script>
+  </body>
+</html>
