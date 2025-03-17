@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Detalle del Proyecto</title>
+    <title>Blog</title>
     <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
@@ -12,6 +12,11 @@
     <!-- Google Fonts: Poppins -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome para iconos -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
       rel="stylesheet"
     />
     <!-- Estilos personalizados -->
@@ -62,12 +67,12 @@
       }
       .main-content {
         margin-left: 250px;
-        padding: 0;
+        padding: 0; /* Eliminamos el padding para que no haya espacios innecesarios */
         flex-grow: 1;
       }
       .footer {
         margin-top: 250px;
-        background-color: #04051A; /* Color del footer */
+        background-color: #04051a; /* Color del footer */
         padding: 100px 0 20px; /* Añadimos un padding-top alto */
         text-align: center;
         width: 100%;
@@ -128,34 +133,23 @@
         border-radius: 5px;
         cursor: pointer;
       }
-      .comment {
-        background-color: #fff5f5;
-        color: black;
-        padding: 10px;
-        border-radius: 5px;
-        margin-bottom: 10px;
-      }
-      .comment.reply {
-        color: black;
-        margin-left: 20px;
-        background-color: #fff5f5;
-      }
-
-      /* Estilos para las cards */
       .card-container {
         display: flex;
         gap: 20px; /* Espacio entre las cards */
         flex-wrap: wrap;
         justify-content: flex-start; /* Las cards no se centran */
+        padding: 20px; /* Añadimos padding para separar del borde */
       }
       .card {
-        background-color: #05071a; /* Color de fondo de las cards */
+        background-color: #1a0b2e; /* Color de fondo de las cards */
         border: none;
         border-radius: 10px; /* Bordes redondeados */
         transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto hover suave */
         flex: 1 1 calc(33.333% - 40px); /* 3 cards por fila en escritorio */
         max-width: calc(33.333% - 40px); /* 3 cards por fila en escritorio */
         margin-bottom: 20px; /* Espacio entre las cards */
+        display: flex;
+        flex-direction: column;
       }
       .card:hover {
         transform: translateY(-5px); /* Efecto de levitación al hacer hover */
@@ -163,6 +157,9 @@
       }
       .card-body {
         padding: 20px; /* Espaciado interno */
+        flex-grow: 1; /* Asegura que todas las cards tengan la misma altura */
+        display: flex;
+        flex-direction: column;
       }
       .card-title {
         color: #ffffff; /* Color del título */
@@ -172,6 +169,11 @@
       .card-text {
         color: #d1d1d1; /* Color del texto */
         font-size: 1rem; /* Tamaño del texto */
+        flex-grow: 1; /* Asegura que el texto ocupe el espacio restante */
+      }
+      .card-body .btn {
+        align-self: flex-end; /* Alinea el botón al final */
+        margin-top: auto; /* Empuja el botón hacia abajo */
       }
       @media (max-width: 992px) {
         /* Ajustamos la vista móvil para tablets */
@@ -184,12 +186,13 @@
         }
         .main-content {
           margin-left: 0;
+          padding: 0; /* Eliminamos el padding para que no haya espacios innecesarios */
         }
         .menu-toggle {
           display: block;
         }
         .cta-contacto {
-          width: 90%;
+          width: 90%; /* Ocupa el 90% del ancho */
         }
         .card {
           flex: 1 1 calc(50% - 20px); /* 2 cards por fila en tablet */
@@ -220,7 +223,10 @@
 
     <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
-      <img src="https://img.freepik.com/vector-gratis/circulo-azul-usuario-blanco_78370-4707.jpg" alt="Tu Nombre" />
+      <img
+        src="https://img.freepik.com/vector-gratis/circulo-azul-usuario-blanco_78370-4707.jpg"
+        alt="Tu Nombre"
+      />
       <nav>
         <ul>
           <li><a href="index.html">Inicio</a></li>
@@ -235,108 +241,163 @@
 
     <!-- Main Content -->
     <div class="main-content">
-    <!-- Encabezado de la Noticia -->
-    <section class="container mt-5">
-      <h1 class="text-center mb-4">Título de la Noticia</h1>
-      <p class="text-center">
-        Un breve resumen de la noticia.
-      </p>
-    </section>
+      <!-- Encabezado -->
+      <section class="container mt-5">
+        <h1 class="text-center mb-4">Blog</h1>
+        <p class="text-center">
+          Aquí puedes encontrar una lista de mis proyectos más destacados.
+        </p>
+      </section>
 
-    <!-- Sección de Detalles de la Noticia -->
-    <section class="container mt-5">
-      <h2>Detalles de la Noticia</h2>
-      <p>
-        Aquí puedes describir los detalles completos de la noticia, incluyendo
-        los eventos, fechas y cualquier información relevante.
-      </p>
-    </section>
-
-    <!-- Sección de Imágenes Relacionadas -->
-    <section class="container mt-5">
-      <h2>Imágenes Relacionadas</h2>
-      <div class="card-container">
-        <div class="card">
-        <div class="card-body">
-          <img src="https://via.placeholder.com/150" alt="Imagen 1" class="img-fluid" />
-          <p class="card-text mt-2">Descripción breve de la imagen.</p>
-        </div>
-        </div>
-        <div class="card">
-        <div class="card-body">
-          <img src="https://via.placeholder.com/150" alt="Imagen 2" class="img-fluid" />
-          <p class="card-text mt-2">Descripción breve de la imagen.</p>
-        </div>
-        </div>
-        <div class="card">
-        <div class="card-body">
-          <img src="https://via.placeholder.com/150" alt="Imagen 3" class="img-fluid" />
-          <p class="card-text mt-2">Descripción breve de la imagen.</p>
-        </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Sección de Entrevistas o Declaraciones -->
-    <section class="container mt-5">
-      <h2>Entrevistas o Declaraciones</h2>
-      <p>
-        Incluye citas o declaraciones de personas relevantes relacionadas con
-        la noticia.
-      </p>
-    </section>
-
-    <!-- Sección de Impacto y Reacciones -->
-    <section class="container mt-5">
-      <h2>Impacto y Reacciones</h2>
-      <p>
-        Describe el impacto de la noticia y las reacciones de la comunidad o
-        de las personas involucradas.
-      </p>
-    </section>
-
-    <!-- Sección de Información Adicional -->
-    <section class="container mt-5">
-      <h2>Información Adicional</h2>
-      <p>
-        Proporciona cualquier información adicional que pueda ser relevante
-        para los lectores.
-      </p>
-    </section>
-
-    <!-- Sección de Visualización de Comentarios -->
-    <section class="container mt-5">
-      <h2>Comentarios</h2>
-        <textarea
-        class="form-control"
-        placeholder="Escribe tu comentario..."
-        rows="4"
-        ></textarea>
-        <button type="submit" class="btn btn-primary mt-3">
-        Enviar Comentario
-        </button>
-      </form>
-      <div class="mt-5">
-        <div class="comment d-flex align-items-start">
-          <img src="https://img.freepik.com/vector-gratis/circulo-azul-usuario-blanco_78370-4707.jpg" alt="Usuario 1" class="me-3 rounded-circle" style="width: 50px; height: 50px;" />
-          <div>
-            <p><strong>Usuario 1:</strong> Este es un comentario de ejemplo.</p>
+      <!-- Lista de Noticias -->
+      <section class="container mt-5">
+        <div class="card-container">
+          <!-- Noticia 1 -->
+          <div class="card">
+            <img
+              src="https://grifine.com.ec/wp-content/uploads/2022/06/CER.-CSL.-PARED-BLANCO-BRILLO-30X60-1.31m2-7U-.jpg"
+              class="card-img-top"
+              alt="iPhone"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Lanzamiento del nuevo iPhone</h5>
+              <p class="card-text">
+                Apple ha anunciado el lanzamiento de su nuevo iPhone con
+                características innovadoras.
+              </p>
+              <a href="vista-blog.html" class="btn btn-primary">Leer Más</a>
+            </div>
+          </div>
+          <!-- Noticia 2 -->
+          <div class="card">
+            <img
+              src="https://grifine.com.ec/wp-content/uploads/2022/06/CER.-CSL.-PARED-BLANCO-BRILLO-30X60-1.31m2-7U-.jpg"
+              class="card-img-top"
+              alt="Inteligencia Artificial"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Avances en la Inteligencia Artificial</h5>
+              <p class="card-text">
+                Investigadores han logrado importantes avances en el campo de la
+                inteligencia artificial.
+              </p>
+              <a href="vista-blog.html" class="btn btn-primary">Leer Más</a>
+            </div>
+          </div>
+          <!-- Noticia 3 -->
+          <div class="card">
+            <img
+              src="https://grifine.com.ec/wp-content/uploads/2022/06/CER.-CSL.-PARED-BLANCO-BRILLO-30X60-1.31m2-7U-.jpg"
+              class="card-img-top"
+              alt="Cambio Climático"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Cambio Climático y sus Efectos</h5>
+              <p class="card-text">
+                Un nuevo estudio revela los efectos del cambio climático en
+                diferentes regiones del mundo.
+              </p>
+              <a href="vista-blog.html" class="btn btn-primary">Leer Más</a>
+            </div>
+          </div>
+          <!-- Noticia 4 -->
+          <div class="card">
+            <img
+              src="https://grifine.com.ec/wp-content/uploads/2022/06/CER.-CSL.-PARED-BLANCO-BRILLO-30X60-1.31m2-7U-.jpg"
+              class="card-img-top"
+              alt="Economía Global"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Economía Global en 2023</h5>
+              <p class="card-text">
+                Expertos analizan las tendencias y desafíos de la economía
+                global para el año 2023.
+              </p>
+              <a href="vista-blog.html" class="btn btn-primary">Leer Más</a>
+            </div>
+          </div>
+          <!-- Noticia 5 -->
+          <div class="card">
+            <img
+              src="https://grifine.com.ec/wp-content/uploads/2022/06/CER.-CSL.-PARED-BLANCO-BRILLO-30X60-1.31m2-7U-.jpg"
+              class="card-img-top"
+              alt="Tecnologías en Medicina"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Nuevas Tecnologías en Medicina</h5>
+              <p class="card-text">
+                La medicina moderna se beneficia de nuevas tecnologías que
+                mejoran el diagnóstico y tratamiento.
+              </p>
+              <a href="vista-blog.html" class="btn btn-primary">Leer Más</a>
+            </div>
+          </div>
+          <!-- Noticia 6 -->
+          <div class="card">
+            <img
+              src="https://grifine.com.ec/wp-content/uploads/2022/06/CER.-CSL.-PARED-BLANCO-BRILLO-30X60-1.31m2-7U-.jpg"
+              class="card-img-top"
+              alt="Exploración Espacial"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Exploración Espacial</h5>
+              <p class="card-text">
+                La NASA anuncia nuevas misiones para explorar el espacio
+                profundo en los próximos años.
+              </p>
+              <a href="vista-blog.html" class="btn btn-primary">Leer Más</a>
+            </div>
+          </div>
+          <!-- Noticia 7 -->
+          <div class="card">
+            <img
+              src="https://grifine.com.ec/wp-content/uploads/2022/06/CER.-CSL.-PARED-BLANCO-BRILLO-30X60-1.31m2-7U-.jpg"
+              class="card-img-top"
+              alt="Energía Renovable"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Innovaciones en Energía Renovable</h5>
+              <p class="card-text">
+                Empresas de todo el mundo están invirtiendo en innovaciones para
+                energías renovables.
+              </p>
+              <a href="vista-blog.html" class="btn btn-primary">Leer Más</a>
+            </div>
+          </div>
+          <!-- Noticia 8 -->
+          <div class="card">
+            <img
+              src="https://grifine.com.ec/wp-content/uploads/2022/06/CER.-CSL.-PARED-BLANCO-BRILLO-30X60-1.31m2-7U-.jpg"
+              class="card-img-top"
+              alt="Mundo del Deporte"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Tendencias en el Mundo del Deporte</h5>
+              <p class="card-text">
+                Un vistazo a las últimas tendencias y eventos en el mundo del
+                deporte.
+              </p>
+              <a href="vista-blog.html" class="btn btn-primary">Leer Más</a>
+            </div>
+          </div>
+          <!-- Noticia 9 -->
+          <div class="card">
+            <img
+              src="https://grifine.com.ec/wp-content/uploads/2022/06/CER.-CSL.-PARED-BLANCO-BRILLO-30X60-1.31m2-7U-.jpg"
+              class="card-img-top"
+              alt="Cultura y Entretenimiento"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Cultura y Entretenimiento</h5>
+              <p class="card-text">
+                Las novedades más destacadas en el ámbito de la cultura y el
+                entretenimiento.
+              </p>
+              <a href="vista-blog.html" class="btn btn-primary">Leer Más</a>
+            </div>
           </div>
         </div>
-        <div class="comment reply d-flex align-items-start ms-5">
-          <img src="https://img.freepik.com/vector-gratis/circulo-azul-usuario-blanco_78370-4707.jpg" alt="Usuario 2" class="me-3 rounded-circle" style="width: 50px; height: 50px;" />
-          <div>
-            <p><strong>Usuario 2:</strong> Esta es una respuesta al comentario de ejemplo.</p>
-          </div>
-        </div>
-        <div class="comment d-flex align-items-start">
-          <img src="https://img.freepik.com/vector-gratis/circulo-azul-usuario-blanco_78370-4707.jpg" alt="Usuario 3" class="me-3 rounded-circle" style="width: 50px; height: 50px;" />
-          <div>
-            <p><strong>Usuario 3:</strong> Otro comentario de ejemplo.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
 
       <!-- Footer -->
       <footer class="footer">

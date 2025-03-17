@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio Personal - Inicio</title>
+    <title>Inicio</title>
     <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
@@ -293,6 +293,16 @@
       .blog .btn-primary:hover {
         background-color: #3a2aa3; /* Cambio de color al hacer hover */
       }
+      /* Validaciones formulario */
+      .error-message {
+        color: #ffcccc;
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+        display: block;
+      }
+      .input-error {
+        border: 2px solid #ffcccc;
+      }
     </style>
   </head>
   <body>
@@ -301,7 +311,10 @@
 
     <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
-      <img src="https://via.placeholder.com/150" alt="Tu Nombre" />
+      <img
+        src="https://img.freepik.com/vector-gratis/circulo-azul-usuario-blanco_78370-4707.jpg"
+        alt="Tu Nombre"
+      />
       <nav>
         <ul>
           <li><a href="index.html">Inicio</a></li>
@@ -327,7 +340,10 @@
             </p>
             <a href="quien-soy.html" class="btn btn-primary">Conóceme más</a>
           </div>
-          <img src="https://via.placeholder.com/300" alt="Tu Nombre" />
+          <img
+            src="https://img.freepik.com/foto-gratis/apuesto-hombre-apuntando-lateral_1368-5182.jpg?t=st=1742176104~exp=1742179704~hmac=3bb3f8b3ef80be9a821d21ea05f770616729e269fb019462cfc883c052f60f51&w=740"
+            alt="Tu Nombre"
+          />
         </div>
       </section>
 
@@ -678,21 +694,50 @@
         <section class="cta-contacto">
           <div class="container">
             <h2>¿Buscas algo más personalizado? ¡Contáctanos!</h2>
-            <form>
+            <!-- Se añade el id "ctaForm" al formulario -->
+            <form id="ctaForm" novalidate>
               <input type="text" placeholder="Nombre" required />
+              <span class="error-message" id="error-name"></span>
+
               <input type="email" placeholder="Correo Electrónico" required />
+              <span class="error-message" id="error-email"></span>
+
               <textarea
                 placeholder="Describa el motivo del contacto"
                 required
               ></textarea>
+              <span class="error-message" id="error-message"></span>
+
               <button type="submit">ENVIAR</button>
             </form>
           </div>
         </section>
 
-        <div class="container">
-          <p>&copy; 2023 [Tu Nombre]. Todos los derechos reservados.</p>
-        </div>
+        <!-- Información Personal -->
+        <section class="container mt-5">
+          <div class="row">
+            <div class="col-md-12">
+              <h3>Información Personal</h3>
+              <div class="d-flex justify-content-between my-4">
+                <p>Email: [tu email]</p>
+                <p>Teléfono: [opcional]</p>
+                <p>
+                  LinkedIn:
+                  <a href="[enlace a tu perfil]">[enlace a tu perfil]</a>
+                </p>
+                <p>
+                  GitHub:
+                  <a href="[enlace a tu perfil]">[enlace a tu perfil]</a>
+                </p>
+                <p>Ubicación: [ciudad, país]</p>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <h3>Derechos Reservados</h3>
+              <p>&copy; 2023 Eric Sáez. Todos los derechos reservados.</p>
+            </div>
+          </div>
+        </section>
       </footer>
     </div>
 
@@ -706,6 +751,67 @@
           const sidebar = document.getElementById("sidebar");
           sidebar.classList.toggle("active");
         });
+    </script>
+
+    <!-- Script de validación para formulario CTA -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("ctaForm");
+
+        form.addEventListener("submit", function (e) {
+          // Seleccionar campos y contenedores de error
+          const nameInput = form.querySelector("input[type='text']");
+          const emailInput = form.querySelector("input[type='email']");
+          const messageInput = form.querySelector("textarea");
+
+          const errorName = document.getElementById("error-name");
+          const errorEmail = document.getElementById("error-email");
+          const errorMessage = document.getElementById("error-message");
+
+          // Limpiar mensajes de error previos y quitar clases
+          errorName.textContent = "";
+          errorEmail.textContent = "";
+          errorMessage.textContent = "";
+          nameInput.classList.remove("input-error");
+          emailInput.classList.remove("input-error");
+          messageInput.classList.remove("input-error");
+
+          let hasErrors = false;
+
+          // Validación del campo Nombre
+          if (nameInput.value.trim() === "") {
+            errorName.textContent = "El campo Nombre es obligatorio.";
+            nameInput.classList.add("input-error");
+            hasErrors = true;
+          }
+
+          // Validación del campo Correo Electrónico
+          if (emailInput.value.trim() === "") {
+            errorEmail.textContent =
+              "El campo Correo Electrónico es obligatorio.";
+            emailInput.classList.add("input-error");
+            hasErrors = true;
+          } else {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(emailInput.value.trim())) {
+              errorEmail.textContent = "El correo electrónico no es válido.";
+              emailInput.classList.add("input-error");
+              hasErrors = true;
+            }
+          }
+
+          // Validación del campo Descripción
+          if (messageInput.value.trim() === "") {
+            errorMessage.textContent = "El campo Descripción es obligatorio.";
+            messageInput.classList.add("input-error");
+            hasErrors = true;
+          }
+
+          if (hasErrors) {
+            e.preventDefault(); // Evitar el envío del formulario
+          }
+        });
+      });
     </script>
   </body>
 </html>

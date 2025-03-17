@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio Personal - Curriculum</title>
+    <title>Curriculum</title>
     <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
@@ -21,7 +21,7 @@
         background: linear-gradient(
           to bottom,
           #1a0b2e,
-          #03061b
+          #010418
         ); /* Gradiente oscurecido */
         color: #ffffff;
         display: flex;
@@ -62,12 +62,12 @@
       }
       .main-content {
         margin-left: 250px;
-        padding: 80px 20px 0 20px; /* Se agrega padding para separar del top y los lados */
+        padding: 0;
         flex-grow: 1;
       }
       .footer {
         margin-top: 250px;
-        background-color: #05071a; /* Color del footer */
+        background-color: #04051a; /* Color del footer */
         padding: 100px 0 20px; /* Añadimos un padding-top alto */
         text-align: center;
         width: 100%;
@@ -128,18 +128,6 @@
         border-radius: 5px;
         cursor: pointer;
       }
-      .comment {
-        background-color: #1a1a2e;
-        padding: 10px;
-        border-radius: 5px;
-        margin-bottom: 10px;
-      }
-      .comment.reply {
-        margin-left: 20px;
-        background-color: #2a2a3e;
-      }
-
-      /* Estilos para las cards */
       .card-container {
         display: flex;
         gap: 20px; /* Espacio entre las cards */
@@ -147,39 +135,24 @@
         justify-content: flex-start; /* Las cards no se centran */
       }
       .card {
-        background-color: #1a0b2e; /* Color de fondo de las cards */
+        background-color: #05071a;
         border: none;
-        border-radius: 10px; /* Bordes redondeados */
-        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto hover suave */
-        flex: 1 1 calc(33.333% - 40px); /* 3 cards por fila en escritorio */
-        max-width: calc(33.333% - 40px); /* 3 cards por fila en escritorio */
-        margin-bottom: 20px; /* Espacio entre las cards */
-        display: flex;
-        flex-direction: column;
+        margin-bottom: 20px;
+        flex: 1 1 calc(33.333% - 40px); /* Ajuste para 3 cards por fila */
+        max-width: calc(33.333% - 40px); /* Ajuste para 3 cards por fila */
       }
-      .card:hover {
-        transform: translateY(-5px); /* Efecto de levitación al hacer hover */
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra al hacer hover */
+      .card img {
+        border-radius: 10px 10px 0 0;
       }
       .card-body {
-        padding: 20px; /* Espaciado interno */
-        flex-grow: 1; /* Asegura que todas las cards tengan la misma altura */
-        display: flex;
-        flex-direction: column;
+        padding: 20px;
       }
       .card-title {
-        color: #ffffff; /* Color del título */
-        font-size: 1.5rem; /* Tamaño del título */
-        margin-bottom: 10px; /* Espaciado inferior */
+        color: #ffffff; /* Títulos en blanco */
+        font-size: 1.5rem;
       }
       .card-text {
-        color: #d1d1d1; /* Color del texto */
-        font-size: 1rem; /* Tamaño del texto */
-        flex-grow: 1; /* Asegura que el texto ocupe el espacio restante */
-      }
-      .card-body .btn {
-        align-self: flex-end; /* Alinea el botón al final */
-        margin-top: auto; /* Empuja el botón hacia abajo */
+        color: #ffffff;
       }
       @media (max-width: 992px) {
         /* Ajustamos la vista móvil para tablets */
@@ -192,7 +165,6 @@
         }
         .main-content {
           margin-left: 0;
-          padding: 80px 20px 0 20px; /* Ajuste de padding para tablet */
         }
         .menu-toggle {
           display: block;
@@ -204,58 +176,22 @@
           flex: 1 1 calc(50% - 20px); /* 2 cards por fila en tablet */
           max-width: calc(50% - 20px);
         }
-        .card-container#formacion-academica .card {
-          flex: 1 1 100%; /* 1 card por fila en tablet */
-          max-width: 100%;
-        }
-        .card-container#certificaciones .card {
-          flex: 1 1 100%; /* 1 card por fila en tablet */
-          max-width: 100%;
-        }
       }
       @media (max-width: 576px) {
         .card {
           flex: 1 1 100%; /* 1 card por fila en móvil */
           max-width: 100%;
         }
-        .card-container#idiomas .card {
-          flex: 1 1 100%; /* 1 card por fila en móvil */
-          max-width: 100%;
-        }
       }
-
-      /* Estilos para las secciones visuales */
-      .icon-card {
-        text-align: center;
-        padding: 20px;
-        background-color: #1a0b2e;
-        border-radius: 10px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        flex: 1 1 calc(33.333% - 40px); /* 3 cards por fila en escritorio */
-        max-width: calc(33.333% - 40px); /* 3 cards por fila en escritorio */
-        margin-bottom: 20px; /* Espacio entre las cards */
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between; /* Asegura que el contenido esté distribuido */
-      }
-      .icon-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-      }
-      .icon-card i {
-        font-size: 2rem;
+      /* Validaciones formulario */
+      .error-message {
+        color: #ffcccc;
+        font-size: 0.9rem;
         margin-bottom: 10px;
-        color: #553bfb;
+        display: block;
       }
-      .icon-card h5 {
-        color: #ffffff;
-        font-size: 1.25rem;
-        margin-bottom: 10px;
-      }
-      .icon-card p {
-        color: #d1d1d1;
-        font-size: 1rem;
-        flex-grow: 1; /* Asegura que el texto ocupe el espacio restante */
+      .input-error {
+        border: 2px solid #ffcccc;
       }
     </style>
     <!-- Font Awesome para iconos -->
@@ -270,7 +206,10 @@
 
     <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
-      <img src="https://via.placeholder.com/150" alt="Tu Nombre" />
+      <img
+        src="https://img.freepik.com/vector-gratis/circulo-azul-usuario-blanco_78370-4707.jpg"
+        alt="Tu Nombre"
+      />
       <nav>
         <ul>
           <li><a href="index.html">Inicio</a></li>
@@ -555,25 +494,41 @@
       <section class="container mt-5">
         <h2>Competencias Personales</h2>
         <div class="card-container">
-          <div class="icon-card">
-            <i class="fas fa-comments"></i>
-            <h5>Alta capacidad de comunicación</h5>
-            <p>Habilidad para comunicar ideas de manera clara y efectiva.</p>
+          <div class="card">
+            <div class="card-body text-center">
+              <i class="fas fa-comments fa-2x mb-3"></i>
+              <h5 class="card-title">Alta capacidad de comunicación</h5>
+              <p class="card-text">
+                Habilidad para comunicar ideas de manera clara y efectiva.
+              </p>
+            </div>
           </div>
-          <div class="icon-card">
-            <i class="fas fa-users"></i>
-            <h5>Trabajo en equipo</h5>
-            <p>Colaboración efectiva en entornos grupales.</p>
+          <div class="card">
+            <div class="card-body text-center">
+              <i class="fas fa-users fa-2x mb-3"></i>
+              <h5 class="card-title">Trabajo en equipo</h5>
+              <p class="card-text">
+                Colaboración efectiva en entornos grupales.
+              </p>
+            </div>
           </div>
-          <div class="icon-card">
-            <i class="fas fa-hand-holding-heart"></i>
-            <h5>Empatía y confianza</h5>
-            <p>Capacidad para entender y conectar con los demás.</p>
+          <div class="card">
+            <div class="card-body text-center">
+              <i class="fas fa-hand-holding-heart fa-2x mb-3"></i>
+              <h5 class="card-title">Empatía y confianza</h5>
+              <p class="card-text">
+                Capacidad para entender y conectar con los demás.
+              </p>
+            </div>
           </div>
-          <div class="icon-card">
-            <i class="fas fa-brain"></i>
-            <h5>Optimismo y perseverancia</h5>
-            <p>Enfoque positivo y determinación para superar desafíos.</p>
+          <div class="card">
+            <div class="card-body text-center">
+              <i class="fas fa-brain fa-2x mb-3"></i>
+              <h5 class="card-title">Optimismo y perseverancia</h5>
+              <p class="card-text">
+                Enfoque positivo y determinación para superar desafíos.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -581,21 +536,27 @@
       <!-- Idiomas -->
       <section class="container mt-5">
         <h2>Idiomas</h2>
-        <div class="card-container" id="idiomas">
-          <div class="icon-card">
-            <i class="fas fa-language"></i>
-            <h5>Castellano</h5>
-            <p>Nativo</p>
+        <div class="card-container">
+          <div class="card">
+            <div class="card-body text-center">
+              <i class="fas fa-language fa-2x mb-3"></i>
+              <h5 class="card-title">Castellano</h5>
+              <p class="card-text">Nativo</p>
+            </div>
           </div>
-          <div class="icon-card">
-            <i class="fas fa-language"></i>
-            <h5>Catalán</h5>
-            <p>Nativo</p>
+          <div class="card">
+            <div class="card-body text-center">
+              <i class="fas fa-language fa-2x mb-3"></i>
+              <h5 class="card-title">Catalán</h5>
+              <p class="card-text">Nativo</p>
+            </div>
           </div>
-          <div class="icon-card">
-            <i class="fas fa-language"></i>
-            <h5>Inglés</h5>
-            <p>Medio/Alto</p>
+          <div class="card">
+            <div class="card-body text-center">
+              <i class="fas fa-language fa-2x mb-3"></i>
+              <h5 class="card-title">Inglés</h5>
+              <p class="card-text">Alto</p>
+            </div>
           </div>
         </div>
       </section>
@@ -603,16 +564,26 @@
       <!-- Certificaciones y Cursos Adicionales -->
       <section class="container mt-5">
         <h2>Certificaciones y Cursos Adicionales</h2>
-        <div class="card-container" id="certificaciones">
-          <div class="icon-card">
-            <i class="fas fa-certificate"></i>
-            <h5>WordPress Básico y Elementor Pro</h5>
-            <p>Certificación en diseño y desarrollo con WordPress.</p>
+        <div class="card-container">
+          <div class="card">
+            <div class="card-body text-center">
+              <i class="fas fa-certificate fa-2x mb-3"></i>
+              <h5 class="card-title">WordPress Básico y Elementor Pro</h5>
+              <p class="card-text">
+                Certificación en diseño y desarrollo con WordPress.
+              </p>
+            </div>
           </div>
-          <div class="icon-card">
-            <i class="fas fa-certificate"></i>
-            <h5>Cursos de IA generativa y automatización</h5>
-            <p>Especialización en IA generativa y automatización de tareas.</p>
+          <div class="card">
+            <div class="card-body text-center">
+              <i class="fas fa-certificate fa-2x mb-3"></i>
+              <h5 class="card-title">
+                Cursos de IA generativa y automatización
+              </h5>
+              <p class="card-text">
+                Especialización en IA generativa y automatización de tareas.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -621,23 +592,31 @@
       <section class="container mt-5">
         <h2>Intereses y Hobbies</h2>
         <div class="card-container">
-          <div class="icon-card">
-            <i class="fas fa-gamepad"></i>
-            <h5>Desarrollo de videojuegos con Unity</h5>
-            <p>Creación de videojuegos y experiencias interactivas.</p>
+          <div class="card">
+            <div class="card-body text-center">
+              <i class="fas fa-gamepad fa-2x mb-3"></i>
+              <h5 class="card-title">Desarrollo de videojuegos con Unity</h5>
+              <p class="card-text">
+                Creación de videojuegos y experiencias interactivas.
+              </p>
+            </div>
           </div>
-          <div class="icon-card">
-            <i class="fas fa-code"></i>
-            <h5>Participación en hackathones</h5>
-            <p>
-              Competencias de programación y desarrollo de soluciones
-              innovadoras.
-            </p>
+          <div class="card">
+            <div class="card-body text-center">
+              <i class="fas fa-code fa-2x mb-3"></i>
+              <h5 class="card-title">Participación en hackathones</h5>
+              <p class="card-text">
+                Competencias de programación y desarrollo de soluciones
+                innovadoras.
+              </p>
+            </div>
           </div>
-          <div class="icon-card">
-            <i class="fas fa-camera"></i>
-            <h5>Fotografía digital</h5>
-            <p>Captura y edición de imágenes digitales.</p>
+          <div class="card">
+            <div class="card-body text-center">
+              <i class="fas fa-camera fa-2x mb-3"></i>
+              <h5 class="card-title">Fotografía digital</h5>
+              <p class="card-text">Captura y edición de imágenes digitales.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -653,13 +632,20 @@
         <section class="cta-contacto">
           <div class="container">
             <h2>¿Buscas algo más personalizado? ¡Contáctanos!</h2>
-            <form>
+            <!-- Se añade el id "ctaForm" al formulario -->
+            <form id="ctaForm" novalidate>
               <input type="text" placeholder="Nombre" required />
+              <span class="error-message" id="error-name"></span>
+
               <input type="email" placeholder="Correo Electrónico" required />
+              <span class="error-message" id="error-email"></span>
+
               <textarea
                 placeholder="Describa el motivo del contacto"
                 required
               ></textarea>
+              <span class="error-message" id="error-message"></span>
+
               <button type="submit">ENVIAR</button>
             </form>
           </div>
@@ -668,20 +654,23 @@
         <!-- Información Personal -->
         <section class="container mt-5">
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
               <h3>Información Personal</h3>
-              <p>Email: [tu email]</p>
-              <p>Teléfono: [opcional]</p>
-              <p>
-                LinkedIn:
-                <a href="[enlace a tu perfil]">[enlace a tu perfil]</a>
-              </p>
-              <p>
-                GitHub: <a href="[enlace a tu perfil]">[enlace a tu perfil]</a>
-              </p>
-              <p>Ubicación: [ciudad, país]</p>
+              <div class="d-flex justify-content-between my-4">
+                <p>Email: [tu email]</p>
+                <p>Teléfono: [opcional]</p>
+                <p>
+                  LinkedIn:
+                  <a href="[enlace a tu perfil]">[enlace a tu perfil]</a>
+                </p>
+                <p>
+                  GitHub:
+                  <a href="[enlace a tu perfil]">[enlace a tu perfil]</a>
+                </p>
+                <p>Ubicación: [ciudad, país]</p>
+              </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-12">
               <h3>Derechos Reservados</h3>
               <p>&copy; 2023 Eric Sáez. Todos los derechos reservados.</p>
             </div>
@@ -700,6 +689,67 @@
           const sidebar = document.getElementById("sidebar");
           sidebar.classList.toggle("active");
         });
+    </script>
+
+    <!-- Script de validación para formulario CTA -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("ctaForm");
+
+        form.addEventListener("submit", function (e) {
+          // Seleccionar campos y contenedores de error
+          const nameInput = form.querySelector("input[type='text']");
+          const emailInput = form.querySelector("input[type='email']");
+          const messageInput = form.querySelector("textarea");
+
+          const errorName = document.getElementById("error-name");
+          const errorEmail = document.getElementById("error-email");
+          const errorMessage = document.getElementById("error-message");
+
+          // Limpiar mensajes de error previos y quitar clases
+          errorName.textContent = "";
+          errorEmail.textContent = "";
+          errorMessage.textContent = "";
+          nameInput.classList.remove("input-error");
+          emailInput.classList.remove("input-error");
+          messageInput.classList.remove("input-error");
+
+          let hasErrors = false;
+
+          // Validación del campo Nombre
+          if (nameInput.value.trim() === "") {
+            errorName.textContent = "El campo Nombre es obligatorio.";
+            nameInput.classList.add("input-error");
+            hasErrors = true;
+          }
+
+          // Validación del campo Correo Electrónico
+          if (emailInput.value.trim() === "") {
+            errorEmail.textContent =
+              "El campo Correo Electrónico es obligatorio.";
+            emailInput.classList.add("input-error");
+            hasErrors = true;
+          } else {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(emailInput.value.trim())) {
+              errorEmail.textContent = "El correo electrónico no es válido.";
+              emailInput.classList.add("input-error");
+              hasErrors = true;
+            }
+          }
+
+          // Validación del campo Descripción
+          if (messageInput.value.trim() === "") {
+            errorMessage.textContent = "El campo Descripción es obligatorio.";
+            messageInput.classList.add("input-error");
+            hasErrors = true;
+          }
+
+          if (hasErrors) {
+            e.preventDefault(); // Evitar el envío del formulario
+          }
+        });
+      });
     </script>
   </body>
 </html>
