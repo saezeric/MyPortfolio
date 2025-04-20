@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curriculum</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts: Poppins -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome para iconos -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+
+  <body>
+    <!-- Botón para abrir/cerrar el menú en móviles/tablets -->
+    <button class="menu-toggle" id="menuToggle">☰</button>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <!-- Se muestra el avatar y el dropdown de usuario (estáticos) -->
+      <div class="dropdown text-center">
+        <h2>Eric Saez Escalona</h2>
+        <div class="d-flex justify-content-center align-items-center">
+          <a href="#" class="text-decoration-none">
+            <img
+              src="./images/miFoto.png"
+              alt="Mi foto personal para el menú de mi portfolio"
+            />
+          </a>
+        </div>
+      </div>
+
+      <!-- Menú de navegación -->
+      <nav>
+        <ul>
+          <li>
+            <a href="./index.html">
+              <i class="fas fa-home"></i>
+              Inicio
+            </a>
+          </li>
+          <li>
+            <a href="./quien-soy.html">
+              <i class="fas fa-user"></i>
+              ¿Quién soy?
+            </a>
+          </li>
+          <li>
+            <a href="./curriculum.html">
+              <i class="fas fa-file-alt"></i>
+              Curriculum
+            </a>
+          </li>
+          <li>
+            <a href="./proyectos.html">
+              <i class="fas fa-code"></i>
+              Proyectos
+            </a>
+          </li>
+          <li>
+            <a href="./blog.html">
+              <i class="fas fa-blog"></i>
+              Blog
+            </a>
+          </li>
+          <li>
+            <a href="./contacto.html">
+              <i class="fas fa-envelope"></i>
+              Contacto
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <main class="main-content">
+      <section class="section proyect-banner">
+        <div class="container py-5 text-center position-relative">
+          <h1>Título de la Noticia Ejemplo</h1>
+          <p class="proyect-content glass-box">
+            Resumen breve de la noticia que invita al lector a seguir leyendo.
+          </p>
+          <!-- Partículas decorativas -->
+          <div
+            class="particle"
+            style="
+              top: 20%;
+              left: 15%;
+              width: 8px;
+              height: 8px;
+              animation-delay: -2s;
+            "
+          ></div>
+          <div
+            class="particle"
+            style="
+              top: 70%;
+              right: 10%;
+              width: 12px;
+              height: 12px;
+              animation-duration: 8s;
+            "
+          ></div>
+        </div>
+      </section>
+
+      <!-- Contenido de la noticia -->
+      <section class="section py-5">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <p class="publication-date mb-5">
+                Publicado el 15 de Abril de 2025
+              </p>
+              <div class="news-content">
+                <h2 class="detail-title">Subtítulo de la Sección 1</h2>
+                <p>
+                  Descripción detallada de la primera parte de la noticia. Aquí
+                  se expone el contexto y los datos fundamentales.
+                </p>
+                <h2 class="detail-title mt-4">Subtítulo de la Sección 2</h2>
+                <p>
+                  Continuación de la noticia con información adicional, citas o
+                  ejemplos relevantes para ilustrar el tema.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección de Comentarios -->
+      <section class="comments-section py-5">
+        <div class="container">
+          <h2 class="section-title">Comentarios</h2>
+
+          <!-- Comentario 1 -->
+          <div class="comment-card">
+            <div class="comment-header d-flex align-items-center">
+              <img
+                src="https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="Avatar"
+                class="comment-avatar me-2"
+              />
+              <div>
+                <strong class="comment-author">María Pérez</strong>
+                <small class="comment-date">14 de Abril de 2025</small>
+              </div>
+            </div>
+            <p class="comment-text">
+              Muy interesante este artículo. Me ha ayudado a comprender mejor el
+              tema.
+            </p>
+
+            <!-- Respuesta al Comentario 1 -->
+            <div class="comment-reply">
+              <div class="comment-header d-flex align-items-center">
+                <img
+                  src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                  alt="Avatar"
+                  class="comment-avatar me-2"
+                />
+                <div>
+                  <strong class="comment-author">Juan López</strong>
+                  <small class="comment-date">15 de Abril de 2025</small>
+                </div>
+              </div>
+              <p class="comment-text">
+                Gracias por tu comentario, María. ¡Me alegra que te haya
+                resultado útil!
+              </p>
+            </div>
+
+            <!-- Botón de Responder -->
+            <button class="reply-btn" onclick="toggleReplyForm(1)">
+              <i class="fas fa-reply"></i>
+              Responder
+            </button>
+            <div id="replyForm-1" class="reply-form" style="display: none">
+              <form class="comment-form">
+                <textarea
+                  class="form-control"
+                  placeholder="Escribe tu respuesta..."
+                  rows="3"
+                  required
+                  style="color: #555"
+                ></textarea>
+                <button type="button" class="submit-btn">
+                  <i class="fas fa-paper-plane"></i>
+                  Enviar Respuesta
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Comentario 2 -->
+          <div class="comment-card">
+            <div class="comment-header d-flex align-items-center">
+              <img
+                src="https://images.pexels.com/photos/846741/pexels-photo-846741.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="Avatar"
+                class="comment-avatar me-2"
+              />
+              <div>
+                <strong class="comment-author">Luis Gómez</strong>
+                <small class="comment-date">13 de Abril de 2025</small>
+              </div>
+            </div>
+            <p class="comment-text">
+              Quisiera saber más detalles sobre las fuentes utilizadas.
+            </p>
+
+            <!-- Botón de Responder -->
+            <button class="reply-btn" onclick="toggleReplyForm(2)">
+              <i class="fas fa-reply"></i>
+              Responder
+            </button>
+            <div id="replyForm-2" class="reply-form" style="display: none">
+              <form class="comment-form">
+                <textarea
+                  class="form-control"
+                  placeholder="Escribe tu respuesta..."
+                  rows="3"
+                  required
+                  style="color: #555"
+                ></textarea>
+                <button type="button" class="submit-btn">
+                  <i class="fas fa-paper-plane"></i>
+                  Enviar Respuesta
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Formulario para Nuevo Comentario -->
+          <div class="new-comment">
+            <h3>Deja tu comentario</h3>
+            <form class="comment-form">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Tu nombre"
+                required
+                style="color: #555"
+              />
+              <textarea
+                class="form-control"
+                placeholder="Escribe tu comentario..."
+                rows="4"
+                required
+                style="color: #555"
+              ></textarea>
+              <button type="button" class="submit-btn">
+                <i class="fas fa-comment-dots"></i>
+                Enviar Comentario
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-particles" id="footerParticles"></div>
+
+      <!-- CTA de Contacto -->
+      <section class="cta-contacto">
+        <div class="container text-center">
+          <h2>¿Buscas algo más personalizado? ¡Contáctanos!</h2>
+          <form id="ctaForm" novalidate>
+            <input type="text" placeholder="Nombre" required />
+            <span class="error-message" id="error-name"></span>
+
+            <input type="email" placeholder="Correo Electrónico" required />
+            <span class="error-message" id="error-email"></span>
+
+            <textarea
+              placeholder="Describa el motivo del contacto"
+              required
+            ></textarea>
+            <span class="error-message" id="error-message"></span>
+
+            <button type="submit">ENVIAR MENSAJE</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Información Personal -->
+      <section class="container footer-info">
+        <h3>Información de Contacto</h3>
+        <div class="contact-grid">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:ericsaez13@gmail.com">ericsaez13@gmail.com</a>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone-alt"></i>
+            <a href="tel:+34633191460">+34 633 19 14 60</a>
+          </div>
+          <div class="contact-item">
+            <i class="fab fa-linkedin"></i>
+            <a
+              href="https://www.linkedin.com/in/eric-saez-escalona-877049258/"
+              target="_blank"
+              >LinkedIn</a
+            >
+          </div>
+          <div class="contact-item">
+            <i class="fab fa-github"></i>
+            <a href="https://github.com/saezeric" target="_blank">GitHub</a>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Badalona, Barcelona</span>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <p>
+            &copy; 2025 <a href="#">Eric Sáez Escalona</a>. Todos los derechos
+            reservados.
+          </p>
+        </div>
+      </section>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- at the end of the body -->
+    <script type="text/javascript" src="vanilla-tilt.min.js"></script>
+    <!-- Script para el toggle del menú -->
+    <script>
+      document
+        .getElementById("menuToggle")
+        .addEventListener("click", function () {
+          document.getElementById("sidebar").classList.toggle("active");
+          document.querySelector(".overlay")?.classList.toggle("active");
+        });
+    </script>
+    <!-- Script de validación para formulario CTA -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("ctaForm");
+
+        form.addEventListener("submit", function (e) {
+          // Seleccionar campos y contenedores de error
+          const nameInput = form.querySelector("input[type='text']");
+          const emailInput = form.querySelector("input[type='email']");
+          const messageInput = form.querySelector("textarea");
+
+          const errorName = document.getElementById("error-name");
+          const errorEmail = document.getElementById("error-email");
+          const errorMessage = document.getElementById("error-message");
+
+          // Limpiar mensajes de error previos y quitar clases
+          errorName.textContent = "";
+          errorEmail.textContent = "";
+          errorMessage.textContent = "";
+          nameInput.classList.remove("input-error");
+          emailInput.classList.remove("input-error");
+          messageInput.classList.remove("input-error");
+
+          let hasErrors = false;
+
+          // Validación del campo Nombre
+          if (nameInput.value.trim() === "") {
+            errorName.textContent = "El campo Nombre es obligatorio.";
+            nameInput.classList.add("input-error");
+            hasErrors = true;
+          }
+
+          // Validación del campo Correo Electrónico
+          if (emailInput.value.trim() === "") {
+            errorEmail.textContent =
+              "El campo Correo Electrónico es obligatorio.";
+            emailInput.classList.add("input-error");
+            hasErrors = true;
+          } else {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(emailInput.value.trim())) {
+              errorEmail.textContent = "El correo electrónico no es válido.";
+              emailInput.classList.add("input-error");
+              hasErrors = true;
+            }
+          }
+
+          // Validación del campo Descripción
+          if (messageInput.value.trim() === "") {
+            errorMessage.textContent = "El campo Descripción es obligatorio.";
+            messageInput.classList.add("input-error");
+            hasErrors = true;
+          }
+
+          if (hasErrors) {
+            e.preventDefault(); // Evitar el envío del formulario
+          }
+        });
+      });
+    </script>
+    <script>
+      // Script para partículas flotantes
+      document.addEventListener("DOMContentLoaded", function () {
+        const particlesContainer = document.getElementById("footerParticles");
+        const particleCount = 20;
+
+        for (let i = 0; i < particleCount; i++) {
+          const particle = document.createElement("div");
+          particle.classList.add("footer-particle");
+
+          // Tamaño aleatorio entre 1px y 3px
+          const size = Math.random() * 2 + 1;
+          particle.style.width = `${size}px`;
+          particle.style.height = `${size}px`;
+
+          // Posición inicial aleatoria
+          particle.style.left = `${Math.random() * 100}%`;
+          particle.style.bottom = `-10px`;
+
+          // Duración de animación aleatoria entre 10s y 20s
+          const duration = Math.random() * 10 + 10;
+          particle.style.animationDuration = `${duration}s`;
+
+          // Retraso inicial aleatorio
+          particle.style.animationDelay = `${Math.random() * 5}s`;
+
+          particlesContainer.appendChild(particle);
+        }
+      });
+    </script>
+    <!-- Script para mostrar/ocultar formularios de respuesta -->
+    <script>
+      function toggleReplyForm(commentId) {
+        const form = document.getElementById("replyForm-" + commentId);
+        form.style.display = form.style.display === "block" ? "none" : "block";
+      }
+    </script>
+  </body>
+</html>
