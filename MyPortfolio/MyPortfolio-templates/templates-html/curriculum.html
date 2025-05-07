@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curriculum</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts: Poppins -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome para iconos -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+
+  <body>
+    <!-- Botón para abrir/cerrar el menú en móviles/tablets -->
+    <button class="menu-toggle" id="menuToggle">☰</button>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <!-- Se muestra el avatar y el dropdown de usuario (estáticos) -->
+      <div class="dropdown text-center">
+        <h2>Eric Saez Escalona</h2>
+        <div class="d-flex justify-content-center align-items-center">
+          <a href="#" class="text-decoration-none">
+            <img
+              src="./images/miFoto.png"
+              alt="Mi foto personal para el menú de mi portfolio"
+            />
+          </a>
+        </div>
+      </div>
+
+      <!-- Menú de navegación -->
+      <nav>
+        <ul>
+          <li>
+            <a href="./index.html">
+              <i class="fas fa-home"></i>
+              Inicio
+            </a>
+          </li>
+          <li>
+            <a href="./quien-soy.html">
+              <i class="fas fa-user"></i>
+              ¿Quién soy?
+            </a>
+          </li>
+          <li>
+            <a href="./curriculum.html">
+              <i class="fas fa-file-alt"></i>
+              Curriculum
+            </a>
+          </li>
+          <li>
+            <a href="./proyectos.html">
+              <i class="fas fa-code"></i>
+              Proyectos
+            </a>
+          </li>
+          <li>
+            <a href="./blog.html">
+              <i class="fas fa-blog"></i>
+              Blog
+            </a>
+          </li>
+          <li>
+            <a href="./contacto.html">
+              <i class="fas fa-envelope"></i>
+              Contacto
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="main-content">
+      <!-- Todo el contenido dentro del banner -->
+      <section class="curriculum-banner">
+        <div class="container text-center">
+          <!-- Encabezado -->
+          <h1>Eric Sáez</h1>
+          <h2>Full Stack | Especialista en IA</h2>
+
+          <!-- Perfil Profesional integrado en el banner -->
+          <div class="profile-card">
+            <h2>Perfil Profesional</h2>
+            <p>
+              Soy un desarrollador Full Stack con especialización en
+              Inteligencia Artificial. Actualmente curso un Máster en IA y un
+              Grado Superior en Desarrollo de Aplicaciones Web. Me considero una
+              persona segura, responsable y perseverante, con alta capacidad de
+              aprendizaje y liderazgo. Tengo experiencia en el desarrollo de
+              aplicaciones web, automatización con IA y creación de contenidos
+              SEO. Busco oportunidades para seguir creciendo profesionalmente y
+              contribuir en proyectos innovadores.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Competencias Digitales -->
+      <section class="container mt-5">
+        <div class="text-center">
+          <h2 class="section-title">Competencias Digitales</h2>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-title"
+                >Alfabetización en información y datos</span
+              >
+              <span class="skill-level">Avanzado</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-title">Comunicación y colaboración</span>
+              <span class="skill-level">Avanzado</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-title">Creación de contenidos digitales</span>
+              <span class="skill-level">Avanzado</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-title">Seguridad</span>
+              <span class="skill-level">Avanzado</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-title">Resolución de problemas</span>
+              <span class="skill-level">Avanzado</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill"></div>
+            </div>
+          </div>
+
+          <!-- Repetir para cada competencia -->
+        </div>
+      </section>
+
+      <!-- Experiencia Laboral -->
+      <section class="container mt-5 text-center">
+        <h2>Experiencia Laboral</h2>
+        <div class="card-container d-flex flex-wrap gap-4">
+          <!-- Experiencia 1 -->
+          <div
+            class="card"
+            data-bs-toggle="modal"
+            data-bs-target="#modalExp1"
+            data-tilt
+            data-tilt-glare
+            data-tilt-max-glare="0.1"
+            data-tilt-speed="300"
+            style="cursor: pointer; width: 18rem"
+          >
+            <div class="card-body">
+              <h5 class="card-title">Desarrollador Web</h5>
+              <p class="card-text">
+                Tech Solutions<br />
+                <small class="">Enero 2020 - Actualmente</small>
+              </p>
+              <p class="card-text mt-4">Haz clic para ver más</p>
+            </div>
+          </div>
+          <!-- Modal Experiencia 1 -->
+          <div class="modal fade" id="modalExp1" tabindex="-1">
+            <div class="modal-dialog">
+              <div class="modal-content" style="background-color: #1a0b2e">
+                <div class="modal-header">
+                  <h5 class="modal-title text-white">Desarrollador Web</h5>
+                </div>
+                <div class="modal-body text-white">
+                  <p>
+                    <strong>Empresa:</strong> Tech Solutions<br />
+                    <strong>Período:</strong> Enero 2020 - Actualmente
+                  </p>
+                  <ul>
+                    <li>Diseño e implementación de aplicaciones web</li>
+                    <li>Mantenimiento y optimización de bases de datos</li>
+                    <li>Integración de APIs REST</li>
+                  </ul>
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn-primary" data-bs-dismiss="modal">
+                    Cerrar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Experiencia 2 -->
+          <div
+            class="card"
+            data-bs-toggle="modal"
+            data-bs-target="#modalExp2"
+            data-tilt
+            data-tilt-glare
+            data-tilt-max-glare="0.1"
+            data-tilt-speed="300"
+            style="cursor: pointer; width: 18rem"
+          >
+            <div class="card-body">
+              <h5 class="card-title">Ingeniero de Software</h5>
+              <p class="card-text">
+                Innovatech<br />
+                <small class="">Julio 2018 - Diciembre 2019</small>
+              </p>
+              <p class="card-text mt-4">Haz clic para ver más</p>
+            </div>
+          </div>
+          <!-- Modal Experiencia 2 -->
+          <div class="modal fade" id="modalExp2" tabindex="-1">
+            <div class="modal-dialog">
+              <div class="modal-content" style="background-color: #1a0b2e">
+                <div class="modal-header">
+                  <h5 class="modal-title text-white">Ingeniero de Software</h5>
+                </div>
+                <div class="modal-body text-white">
+                  <p>
+                    <strong>Empresa:</strong> Innovatech<br />
+                    <strong>Período:</strong> Julio 2018 - Diciembre 2019
+                  </p>
+                  <ul>
+                    <li>Desarrollo de componentes backend en PHP y Node.js</li>
+                    <li>Automatización de procesos con scripts en Python</li>
+                    <li>Revisión de código y mentoría de equipo junior</li>
+                  </ul>
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn-primary" data-bs-dismiss="modal">
+                    Cerrar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Formación Profesional -->
+      <section class="section">
+        <div class="container text-center">
+          <h2>Formación Profesional</h2>
+          <div class="card-container d-flex flex-wrap gap-4">
+            <!-- Titulación 1 -->
+            <div
+              class="card"
+              data-bs-toggle="modal"
+              data-bs-target="#modalQual1"
+              data-tilt
+              data-tilt-glare
+              data-tilt-max-glare="0.1"
+              data-tilt-speed="300"
+              style="cursor: pointer; width: 18rem"
+            >
+              <div class="card-body">
+                <h5 class="card-title">Ingeniería Informática</h5>
+                <p class="card-text">Universidad de Madrid</p>
+                <p class="card-text">Septiembre 2014 — Junio 2018</p>
+                <p class="card-text mt-4">Haz clic para ver más</p>
+              </div>
+            </div>
+            <!-- Modal Titulación 1 -->
+            <div class="modal fade" id="modalQual1" tabindex="-1">
+              <div class="modal-dialog">
+                <div class="modal-content" style="background-color: #1a0b2e">
+                  <div class="modal-header">
+                    <h5 class="modal-title text-white">
+                      Ingeniería Informática
+                    </h5>
+                  </div>
+                  <div class="modal-body text-white">
+                    <p><strong>Institución:</strong> Universidad de Madrid</p>
+                    <p>
+                      <strong>Período:</strong> Septiembre 2014 — Junio 2018
+                    </p>
+                    <p>
+                      Estudios centrados en desarrollo de software, algoritmos y
+                      bases de datos.
+                    </p>
+                    <hr class="border-secondary" />
+                    <h6>Contenidos aprendidos:</h6>
+                    <ul>
+                      <li>Programación en Java y C++</li>
+                      <li>Bases de datos relacionales</li>
+                      <li>Estructuras de datos y algoritmos</li>
+                    </ul>
+                  </div>
+                  <div class="modal-footer">
+                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                      Cerrar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Titulación 2 -->
+            <div
+              class="card"
+              data-bs-toggle="modal"
+              data-bs-target="#modalQual2"
+              data-tilt
+              data-tilt-glare
+              data-tilt-max-glare="0.1"
+              data-tilt-speed="300"
+              style="cursor: pointer; width: 18rem"
+            >
+              <div class="card-body">
+                <h5 class="card-title">Máster en Inteligencia Artificial</h5>
+                <p class="card-text">Instituto Tecnológico</p>
+                <p class="card-text">Enero 2021 — Diciembre 2021</p>
+                <p class="card-text mt-4">Haz clic para ver más</p>
+              </div>
+            </div>
+            <!-- Modal Titulación 2 -->
+            <div class="modal fade" id="modalQual2" tabindex="-1">
+              <div class="modal-dialog">
+                <div class="modal-content" style="background-color: #1a0b2e">
+                  <div class="modal-header">
+                    <h5 class="modal-title text-white">
+                      Máster en Inteligencia Artificial
+                    </h5>
+                  </div>
+                  <div class="modal-body text-white">
+                    <p><strong>Institución:</strong> Instituto Tecnológico</p>
+                    <p><strong>Período:</strong> Enero 2021 — Diciembre 2021</p>
+                    <p>
+                      Programa avanzado en aprendizaje automático y redes
+                      neuronales.
+                    </p>
+                    <hr class="border-secondary" />
+                    <h6>Contenidos aprendidos:</h6>
+                    <ul>
+                      <li>Machine Learning con Python</li>
+                      <li>Redes Neuronales y Deep Learning</li>
+                      <li>Procesamiento de lenguaje natural</li>
+                    </ul>
+                  </div>
+                  <div class="modal-footer">
+                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                      Cerrar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Habilidades Técnicas -->
+      <section class="container mt-5">
+        <div class="text-center">
+          <h2 class="section-title">Habilidades Técnicas</h2>
+        </div>
+
+        <div class="tech-grid px-2">
+          <!-- Lenguajes -->
+          <div class="tech-card">
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/javascript.svg"
+              class="tech-icon"
+              alt="Lenguajes"
+              style="filter: invert(1)"
+            />
+            <h3 class="tech-title">Lenguajes</h3>
+            <div class="tech-items">
+              <span class="tech-item">
+                <img
+                  src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/java.svg"
+                  alt="Java"
+                  style="filter: invert(1)"
+                />
+                Java
+              </span>
+              <span class="tech-item">
+                <img
+                  src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/csharp.svg"
+                  alt="C#"
+                  style="filter: invert(1)"
+                />
+                C#
+              </span>
+              <span class="tech-item">
+                <img
+                  src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/cplusplus.svg"
+                  alt="C++"
+                  style="filter: invert(1)"
+                />
+                C++
+              </span>
+              <span class="tech-item">
+                <img
+                  src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/python.svg"
+                  alt="Python"
+                  style="filter: invert(1)"
+                />
+                Python
+              </span>
+              <span class="tech-item">
+                <img
+                  src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/javascript.svg"
+                  alt="JS"
+                  style="filter: invert(1)"
+                />
+                JS
+              </span>
+              <span class="tech-item">
+                <img
+                  src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/php.svg"
+                  alt="PHP"
+                  style="filter: invert(1)"
+                />
+                PHP
+              </span>
+              <span class="tech-item">
+                <img
+                  src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/mysql.svg"
+                  alt="SQL"
+                  style="filter: invert(1)"
+                />
+                SQL
+              </span>
+            </div>
+          </div>
+
+          <!-- Frameworks -->
+          <div class="tech-card">
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/react.svg"
+              class="tech-icon"
+              alt="Frameworks"
+              style="filter: invert(1)"
+            />
+            <h3 class="tech-title">Frameworks</h3>
+            <div class="tech-items">
+              <span class="tech-item">
+                <img
+                  src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/django.svg"
+                  alt="Django"
+                  style="filter: invert(1)"
+                />
+                Django
+              </span>
+              <span class="tech-item">
+                <img
+                  src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/bootstrap.svg"
+                  alt="Bootstrap"
+                  style="filter: invert(1)"
+                />
+                Bootstrap
+              </span>
+            </div>
+          </div>
+
+          <!-- IDEs -->
+          <div class="tech-card">
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/visualstudiocode.svg"
+              class="tech-icon"
+              alt="IDEs"
+              style="filter: invert(1)"
+            />
+            <h3 class="tech-title">Entornos</h3>
+            <div class="tech-items">
+              <span class="tech-item">
+                <img
+                  src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/visualstudio.svg"
+                  alt="Visual Studio"
+                  style="filter: invert(1)"
+                />
+                Visual Studio
+              </span>
+              <span class="tech-item">
+                <img
+                  src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/visualstudiocode.svg"
+                  alt="VS Code"
+                  style="filter: invert(1)"
+                />
+                VS Code
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Proyectos Destacados -->
+      <section id="proyectos" class="container p-5 text-center">
+        <h2>Proyectos Destacados</h2>
+        <div
+          class="card-container proyectos d-flex flex-wrap gap-5 justify-content-center py-4"
+        >
+          <!-- Proyecto 1 -->
+          <div
+            class="card"
+            data-tilt
+            data-tilt-glare
+            data-tilt-max-glare="0.1"
+            data-tilt-speed="300"
+          >
+            <img
+              src="https://m.media-amazon.com/images/I/61M3rDwh4qL.png"
+              class="card-img-top"
+              alt="Proyecto 1"
+            />
+            <!-- Enlace para móvil/tablet -->
+            <a
+              href="proyecto.html?id=1"
+              class="mobile-link"
+              aria-label="Ver Proyecto 1"
+            ></a>
+            <!-- Overlay para desktop -->
+            <div class="card-overlay">
+              <h5 class="card-title">Proyecto Neon</h5>
+              <p class="card-text">
+                Desarrollo web con efectos luminosos y diseño futurista.
+              </p>
+              <a href="proyecto.html?id=1" class="btn">Explorar</a>
+            </div>
+          </div>
+
+          <!-- Proyecto 2 -->
+          <div
+            class="card"
+            data-tilt
+            data-tilt-glare
+            data-tilt-max-glare="0.1"
+            data-tilt-speed="300"
+          >
+            <img
+              src="https://m.media-amazon.com/images/I/61M3rDwh4qL.png"
+              class="card-img-top"
+              alt="Proyecto 2"
+            />
+            <a
+              href="proyecto.html?id=2"
+              class="mobile-link"
+              aria-label="Ver Proyecto 2"
+            ></a>
+            <div class="card-overlay">
+              <h5 class="card-title">Interfaz AR</h5>
+              <p class="card-text">
+                Realidad aumentada para experiencias inmersivas.
+              </p>
+              <a href="proyecto.html?id=2" class="btn">Ver Demo</a>
+            </div>
+          </div>
+
+          <!-- Proyecto 3 -->
+          <div
+            class="card"
+            data-tilt
+            data-tilt-glare
+            data-tilt-max-glare="0.1"
+            data-tilt-speed="300"
+          >
+            <img
+              src="https://m.media-amazon.com/images/I/61M3rDwh4qL.png"
+              class="card-img-top"
+              alt="Proyecto 3"
+            />
+            <a
+              href="proyecto.html?id=3"
+              class="mobile-link"
+              aria-label="Ver Proyecto 3"
+            ></a>
+            <div class="card-overlay">
+              <h5 class="card-title">Analytics Pro</h5>
+              <p class="card-text">
+                Visualización de datos en tiempo real con IA.
+              </p>
+              <a href="proyecto.html?id=3" class="btn">Más Info</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Competencias Personales -->
+      <section class="container mt-5 text-center">
+        <h2 class="text-white">Competencias Personales</h2>
+        <div class="card-container d-flex flex-wrap gap-3">
+          <div class="card text-center" style="width: 18rem">
+            <div class="card-body">
+              <i class="fas fa-comments fa-2x mb-3 text-white"></i>
+              <h5 class="card-title text-white">
+                Alta capacidad de comunicación
+              </h5>
+              <p class="card-text text-white">
+                Habilidad para comunicar ideas de manera clara y efectiva.
+              </p>
+            </div>
+          </div>
+          <div class="card text-center" style="width: 18rem">
+            <div class="card-body">
+              <i class="fas fa-users fa-2x mb-3 text-white"></i>
+              <h5 class="card-title text-white">Trabajo en equipo</h5>
+              <p class="card-text text-white">
+                Colaboración efectiva en entornos grupales.
+              </p>
+            </div>
+          </div>
+          <div class="card text-center" style="width: 18rem">
+            <div class="card-body">
+              <i class="fas fa-hand-holding-heart fa-2x mb-3 text-white"></i>
+              <h5 class="card-title text-white">Empatía y confianza</h5>
+              <p class="card-text text-white">
+                Capacidad para entender y conectar con los demás.
+              </p>
+            </div>
+          </div>
+          <div class="card text-center" style="width: 18rem">
+            <div class="card-body">
+              <i class="fas fa-brain fa-2x mb-3 text-white"></i>
+              <h5 class="card-title text-white">Optimismo y perseverancia</h5>
+              <p class="card-text text-white">
+                Enfoque positivo y determinación para superar desafíos.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección de Objetivos a Futuro -->
+      <section class="idiomas-section py-5">
+        <div class="container text-center">
+          <h2>Idiomas</h2>
+          <div class="timeline-container">
+            <div class="timeline-line"></div>
+            <div class="timeline-item">
+              <i class="fas fa-language fa-2x mb-3 text-white"></i>
+              <h5>Castellano</h5>
+              <p>Nativo</p>
+            </div>
+            <div class="timeline-item">
+              <i class="fas fa-language fa-2x mb-3 text-white"></i>
+              <h5>Catalán</h5>
+              <p>Nativo</p>
+            </div>
+            <div class="timeline-item">
+              <i class="fas fa-language fa-2x mb-3 text-white"></i>
+              <h5>Inglés</h5>
+              <p>Alto</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Certificaciones y Cursos Adicionales -->
+      <section class="container mt-5 text-center">
+        <h2 class="text-white">Certificaciones y Cursos Adicionales</h2>
+        <div class="card-container d-flex flex-wrap gap-4">
+          <div class="card text-center" style="width: 18rem">
+            <div class="card-body">
+              <h5 class="card-title text-white">
+                WordPress Básico y Elementor Pro
+              </h5>
+              <p class="card-text text-white">
+                Certificación en diseño y desarrollo con WordPress.
+              </p>
+            </div>
+          </div>
+          <div class="card text-center" style="width: 18rem">
+            <div class="card-body">
+              <h5 class="card-title text-white">
+                IA Generativa y Automatización
+              </h5>
+              <p class="card-text text-white">
+                Especialización en IA generativa y automatización de tareas.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Intereses y Hobbies -->
+      <section class="container mt-5 mb-5 text-center">
+        <h2 class="text-white">Intereses y Hobbies</h2>
+        <div class="card-container d-flex flex-wrap gap-4">
+          <div class="card text-center" style="width: 18rem">
+            <div class="card-body">
+              <i class="fas fa-gamepad fa-2x mb-3 text-white"></i>
+              <h5 class="card-title text-white">
+                Desarrollo de videojuegos con Unity
+              </h5>
+              <p class="card-text text-white">
+                Creación de videojuegos y experiencias interactivas.
+              </p>
+            </div>
+          </div>
+          <div class="card text-center" style="width: 18rem">
+            <div class="card-body">
+              <i class="fas fa-code fa-2x mb-3 text-white"></i>
+              <h5 class="card-title text-white">
+                Participación en Hackathones
+              </h5>
+              <p class="card-text text-white">
+                Competencias de programación y soluciones innovadoras.
+              </p>
+            </div>
+          </div>
+          <div class="card text-center" style="width: 18rem">
+            <div class="card-body">
+              <i class="fas fa-camera fa-2x mb-3 text-white"></i>
+              <h5 class="card-title text-white">Fotografía Digital</h5>
+              <p class="card-text text-white">
+                Captura y edición de imágenes digitales.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Descarga del CV -->
+      <section class="container mt-5 text-center mb-5 text-center">
+        <a href="cv.pdf" class="btn btn-primary" download>Descargar CV</a>
+      </section>
+    </div>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-particles" id="footerParticles"></div>
+
+      <!-- CTA de Contacto -->
+      <section class="cta-contacto">
+        <div class="container text-center">
+          <h2>¿Buscas algo más personalizado? ¡Contáctanos!</h2>
+          <form id="ctaForm" novalidate>
+            <input type="text" placeholder="Nombre" required />
+            <span class="error-message" id="error-name"></span>
+
+            <input type="email" placeholder="Correo Electrónico" required />
+            <span class="error-message" id="error-email"></span>
+
+            <textarea
+              placeholder="Describa el motivo del contacto"
+              required
+            ></textarea>
+            <span class="error-message" id="error-message"></span>
+
+            <button type="submit">ENVIAR MENSAJE</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Información Personal -->
+      <section class="container footer-info">
+        <h3>Información de Contacto</h3>
+        <div class="contact-grid">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:ericsaez13@gmail.com">ericsaez13@gmail.com</a>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone-alt"></i>
+            <a href="tel:+34633191460">+34 633 19 14 60</a>
+          </div>
+          <div class="contact-item">
+            <i class="fab fa-linkedin"></i>
+            <a
+              href="https://www.linkedin.com/in/eric-saez-escalona-877049258/"
+              target="_blank"
+              >LinkedIn</a
+            >
+          </div>
+          <div class="contact-item">
+            <i class="fab fa-github"></i>
+            <a href="https://github.com/saezeric" target="_blank">GitHub</a>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Badalona, Barcelona</span>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <p>
+            &copy; 2025 <a href="#">Eric Sáez Escalona</a>. Todos los derechos
+            reservados.
+          </p>
+        </div>
+      </section>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- at the end of the body -->
+    <script type="text/javascript" src="vanilla-tilt.min.js"></script>
+    <!-- Script para el toggle del menú -->
+    <script>
+      document
+        .getElementById("menuToggle")
+        .addEventListener("click", function () {
+          document.getElementById("sidebar").classList.toggle("active");
+          document.querySelector(".overlay")?.classList.toggle("active");
+        });
+    </script>
+    <!-- Script de validación para formulario CTA -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("ctaForm");
+
+        form.addEventListener("submit", function (e) {
+          // Seleccionar campos y contenedores de error
+          const nameInput = form.querySelector("input[type='text']");
+          const emailInput = form.querySelector("input[type='email']");
+          const messageInput = form.querySelector("textarea");
+
+          const errorName = document.getElementById("error-name");
+          const errorEmail = document.getElementById("error-email");
+          const errorMessage = document.getElementById("error-message");
+
+          // Limpiar mensajes de error previos y quitar clases
+          errorName.textContent = "";
+          errorEmail.textContent = "";
+          errorMessage.textContent = "";
+          nameInput.classList.remove("input-error");
+          emailInput.classList.remove("input-error");
+          messageInput.classList.remove("input-error");
+
+          let hasErrors = false;
+
+          // Validación del campo Nombre
+          if (nameInput.value.trim() === "") {
+            errorName.textContent = "El campo Nombre es obligatorio.";
+            nameInput.classList.add("input-error");
+            hasErrors = true;
+          }
+
+          // Validación del campo Correo Electrónico
+          if (emailInput.value.trim() === "") {
+            errorEmail.textContent =
+              "El campo Correo Electrónico es obligatorio.";
+            emailInput.classList.add("input-error");
+            hasErrors = true;
+          } else {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(emailInput.value.trim())) {
+              errorEmail.textContent = "El correo electrónico no es válido.";
+              emailInput.classList.add("input-error");
+              hasErrors = true;
+            }
+          }
+
+          // Validación del campo Descripción
+          if (messageInput.value.trim() === "") {
+            errorMessage.textContent = "El campo Descripción es obligatorio.";
+            messageInput.classList.add("input-error");
+            hasErrors = true;
+          }
+
+          if (hasErrors) {
+            e.preventDefault(); // Evitar el envío del formulario
+          }
+        });
+      });
+    </script>
+    <script>
+      // Script para partículas flotantes
+      document.addEventListener("DOMContentLoaded", function () {
+        const particlesContainer = document.getElementById("footerParticles");
+        const particleCount = 20;
+
+        for (let i = 0; i < particleCount; i++) {
+          const particle = document.createElement("div");
+          particle.classList.add("footer-particle");
+
+          // Tamaño aleatorio entre 1px y 3px
+          const size = Math.random() * 2 + 1;
+          particle.style.width = `${size}px`;
+          particle.style.height = `${size}px`;
+
+          // Posición inicial aleatoria
+          particle.style.left = `${Math.random() * 100}%`;
+          particle.style.bottom = `-10px`;
+
+          // Duración de animación aleatoria entre 10s y 20s
+          const duration = Math.random() * 10 + 10;
+          particle.style.animationDuration = `${duration}s`;
+
+          // Retraso inicial aleatorio
+          particle.style.animationDelay = `${Math.random() * 5}s`;
+
+          particlesContainer.appendChild(particle);
+        }
+      });
+    </script>
+  </body>
+</html>

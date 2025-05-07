@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curriculum</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts: Poppins -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome para iconos -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+
+  <body>
+    <!-- Botón para abrir/cerrar el menú en móviles/tablets -->
+    <button class="menu-toggle" id="menuToggle">☰</button>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <!-- Se muestra el avatar y el dropdown de usuario (estáticos) -->
+      <div class="dropdown text-center">
+        <h2>Eric Saez Escalona</h2>
+        <div class="d-flex justify-content-center align-items-center">
+          <a href="#" class="text-decoration-none">
+            <img
+              src="./images/miFoto.png"
+              alt="Mi foto personal para el menú de mi portfolio"
+            />
+          </a>
+        </div>
+      </div>
+
+      <!-- Menú de navegación -->
+      <nav>
+        <ul>
+          <li>
+            <a href="./index.html">
+              <i class="fas fa-home"></i>
+              Inicio
+            </a>
+          </li>
+          <li>
+            <a href="./quien-soy.html">
+              <i class="fas fa-user"></i>
+              ¿Quién soy?
+            </a>
+          </li>
+          <li>
+            <a href="./curriculum.html">
+              <i class="fas fa-file-alt"></i>
+              Curriculum
+            </a>
+          </li>
+          <li>
+            <a href="./proyectos.html">
+              <i class="fas fa-code"></i>
+              Proyectos
+            </a>
+          </li>
+          <li>
+            <a href="./blog.html">
+              <i class="fas fa-blog"></i>
+              Blog
+            </a>
+          </li>
+          <li>
+            <a href="./contacto.html">
+              <i class="fas fa-envelope"></i>
+              Contacto
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Proyectos Destacados -->
+      <section id="proyectos" class="container p-5 text-center">
+        <h1>Proyectos Destacados</h1>
+        <div
+          class="card-container proyectos d-flex flex-wrap gap-5 justify-content-center py-4"
+        >
+          <!-- Proyecto 1 -->
+          <div
+            class="card"
+            data-tilt
+            data-tilt-glare
+            data-tilt-max-glare="0.1"
+            data-tilt-speed="300"
+          >
+            <img
+              src="https://m.media-amazon.com/images/I/61M3rDwh4qL.png"
+              class="card-img-top"
+              alt="Proyecto 1"
+            />
+            <a
+              href="proyecto.html?id=1"
+              class="mobile-link"
+              aria-label="Ver Proyecto 1"
+            ></a>
+            <div class="card-overlay">
+              <h5 class="card-title">Proyecto Neon</h5>
+              <p class="card-text">
+                Desarrollo web con efectos luminosos y diseño futurista.
+              </p>
+              <a href="proyecto.html?id=1" class="btn">Explorar</a>
+            </div>
+          </div>
+
+          <!-- Proyecto 2 -->
+          <div
+            class="card"
+            data-tilt
+            data-tilt-glare
+            data-tilt-max-glare="0.1"
+            data-tilt-speed="300"
+          >
+            <img
+              src="https://m.media-amazon.com/images/I/61M3rDwh4qL.png"
+              class="card-img-top"
+              alt="Proyecto 2"
+            />
+            <a
+              href="proyecto.html?id=2"
+              class="mobile-link"
+              aria-label="Ver Proyecto 2"
+            ></a>
+            <div class="card-overlay">
+              <h5 class="card-title">Interfaz AR</h5>
+              <p class="card-text">
+                Realidad aumentada para experiencias inmersivas.
+              </p>
+              <a href="proyecto.html?id=2" class="btn">Ver Demo</a>
+            </div>
+          </div>
+
+          <!-- Proyecto 3 -->
+          <div
+            class="card"
+            data-tilt
+            data-tilt-glare
+            data-tilt-max-glare="0.1"
+            data-tilt-speed="300"
+          >
+            <img
+              src="https://m.media-amazon.com/images/I/61M3rDwh4qL.png"
+              class="card-img-top"
+              alt="Proyecto 3"
+            />
+            <a
+              href="proyecto.html?id=3"
+              class="mobile-link"
+              aria-label="Ver Proyecto 3"
+            ></a>
+            <div class="card-overlay">
+              <h5 class="card-title">Analytics Pro</h5>
+              <p class="card-text">
+                Visualización de datos en tiempo real con IA.
+              </p>
+              <a href="proyecto.html?id=3" class="btn">Más Info</a>
+            </div>
+          </div>
+
+          <!-- Proyecto 4 -->
+          <div
+            class="card"
+            data-tilt
+            data-tilt-glare
+            data-tilt-max-glare="0.1"
+            data-tilt-speed="300"
+          >
+            <img
+              src="https://m.media-amazon.com/images/I/61M3rDwh4qL.png"
+              class="card-img-top"
+              alt="Proyecto 4"
+            />
+            <a
+              href="proyecto.html?id=4"
+              class="mobile-link"
+              aria-label="Ver Proyecto 4"
+            ></a>
+            <div class="card-overlay">
+              <h5 class="card-title">E-Commerce Pro</h5>
+              <p class="card-text">
+                Plataforma de comercio electrónico con carrito de compras.
+              </p>
+              <a href="proyecto.html?id=4" class="btn">Explorar</a>
+            </div>
+          </div>
+
+          <!-- Proyecto 5 -->
+          <div
+            class="card"
+            data-tilt
+            data-tilt-glare
+            data-tilt-max-glare="0.1"
+            data-tilt-speed="300"
+          >
+            <img
+              src="https://m.media-amazon.com/images/I/61M3rDwh4qL.png"
+              class="card-img-top"
+              alt="Proyecto 5"
+            />
+            <a
+              href="proyecto.html?id=5"
+              class="mobile-link"
+              aria-label="Ver Proyecto 5"
+            ></a>
+            <div class="card-overlay">
+              <h5 class="card-title">Portfolio Creativo</h5>
+              <p class="card-text">
+                Diseño interactivo para mostrar trabajos creativos.
+              </p>
+              <a href="proyecto.html?id=5" class="btn">Ver Demo</a>
+            </div>
+          </div>
+
+          <!-- Proyecto 6 -->
+          <div
+            class="card"
+            data-tilt
+            data-tilt-glare
+            data-tilt-max-glare="0.1"
+            data-tilt-speed="300"
+          >
+            <img
+              src="https://m.media-amazon.com/images/I/61M3rDwh4qL.png"
+              class="card-img-top"
+              alt="Proyecto 6"
+            />
+            <a
+              href="proyecto.html?id=6"
+              class="mobile-link"
+              aria-label="Ver Proyecto 6"
+            ></a>
+            <div class="card-overlay">
+              <h5 class="card-title">Gestor de Tareas</h5>
+              <p class="card-text">
+                Aplicación para organizar tareas y proyectos.
+              </p>
+              <a href="proyecto.html?id=6" class="btn">Más Info</a>
+            </div>
+          </div>
+
+          <!-- Proyecto 7 -->
+          <div
+            class="card"
+            data-tilt
+            data-tilt-glare
+            data-tilt-max-glare="0.1"
+            data-tilt-speed="300"
+          >
+            <img
+              src="https://m.media-amazon.com/images/I/61M3rDwh4qL.png"
+              class="card-img-top"
+              alt="Proyecto 7"
+            />
+            <a
+              href="proyecto.html?id=7"
+              class="mobile-link"
+              aria-label="Ver Proyecto 7"
+            ></a>
+            <div class="card-overlay">
+              <h5 class="card-title">Blog Personal</h5>
+              <p class="card-text">
+                Plataforma para compartir artículos y experiencias.
+              </p>
+              <a href="proyecto.html?id=7" class="btn">Explorar</a>
+            </div>
+          </div>
+
+          <!-- Proyecto 8 -->
+          <div
+            class="card"
+            data-tilt
+            data-tilt-glare
+            data-tilt-max-glare="0.1"
+            data-tilt-speed="300"
+          >
+            <img
+              src="https://m.media-amazon.com/images/I/61M3rDwh4qL.png"
+              class="card-img-top"
+              alt="Proyecto 8"
+            />
+            <a
+              href="proyecto.html?id=8"
+              class="mobile-link"
+              aria-label="Ver Proyecto 8"
+            ></a>
+            <div class="card-overlay">
+              <h5 class="card-title">App de Clima</h5>
+              <p class="card-text">
+                Consulta del clima en tiempo real con geolocalización.
+              </p>
+              <a href="proyecto.html?id=8" class="btn">Ver Demo</a>
+            </div>
+          </div>
+
+          <!-- Proyecto 9 -->
+          <div
+            class="card"
+            data-tilt
+            data-tilt-glare
+            data-tilt-max-glare="0.1"
+            data-tilt-speed="300"
+          >
+            <img
+              src="https://m.media-amazon.com/images/I/61M3rDwh4qL.png"
+              class="card-img-top"
+              alt="Proyecto 9"
+            />
+            <a
+              href="proyecto.html?id=9"
+              class="mobile-link"
+              aria-label="Ver Proyecto 9"
+            ></a>
+            <div class="card-overlay">
+              <h5 class="card-title">Juego Retro</h5>
+              <p class="card-text">
+                Videojuego estilo retro con gráficos pixelados.
+              </p>
+              <a href="proyecto.html?id=9" class="btn">Más Info</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-particles" id="footerParticles"></div>
+
+      <!-- CTA de Contacto -->
+      <section class="cta-contacto">
+        <div class="container text-center">
+          <h2>¿Buscas algo más personalizado? ¡Contáctanos!</h2>
+          <form id="ctaForm" novalidate>
+            <input type="text" placeholder="Nombre" required />
+            <span class="error-message" id="error-name"></span>
+
+            <input type="email" placeholder="Correo Electrónico" required />
+            <span class="error-message" id="error-email"></span>
+
+            <textarea
+              placeholder="Describa el motivo del contacto"
+              required
+            ></textarea>
+            <span class="error-message" id="error-message"></span>
+
+            <button type="submit">ENVIAR MENSAJE</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Información Personal -->
+      <section class="container footer-info">
+        <h3>Información de Contacto</h3>
+        <div class="contact-grid">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:ericsaez13@gmail.com">ericsaez13@gmail.com</a>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone-alt"></i>
+            <a href="tel:+34633191460">+34 633 19 14 60</a>
+          </div>
+          <div class="contact-item">
+            <i class="fab fa-linkedin"></i>
+            <a
+              href="https://www.linkedin.com/in/eric-saez-escalona-877049258/"
+              target="_blank"
+              >LinkedIn</a
+            >
+          </div>
+          <div class="contact-item">
+            <i class="fab fa-github"></i>
+            <a href="https://github.com/saezeric" target="_blank">GitHub</a>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Badalona, Barcelona</span>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <p>
+            &copy; 2025 <a href="#">Eric Sáez Escalona</a>. Todos los derechos
+            reservados.
+          </p>
+        </div>
+      </section>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- at the end of the body -->
+    <script type="text/javascript" src="vanilla-tilt.min.js"></script>
+    <!-- Script para el toggle del menú -->
+    <script>
+      document
+        .getElementById("menuToggle")
+        .addEventListener("click", function () {
+          document.getElementById("sidebar").classList.toggle("active");
+          document.querySelector(".overlay")?.classList.toggle("active");
+        });
+    </script>
+    <!-- Script de validación para formulario CTA -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("ctaForm");
+
+        form.addEventListener("submit", function (e) {
+          // Seleccionar campos y contenedores de error
+          const nameInput = form.querySelector("input[type='text']");
+          const emailInput = form.querySelector("input[type='email']");
+          const messageInput = form.querySelector("textarea");
+
+          const errorName = document.getElementById("error-name");
+          const errorEmail = document.getElementById("error-email");
+          const errorMessage = document.getElementById("error-message");
+
+          // Limpiar mensajes de error previos y quitar clases
+          errorName.textContent = "";
+          errorEmail.textContent = "";
+          errorMessage.textContent = "";
+          nameInput.classList.remove("input-error");
+          emailInput.classList.remove("input-error");
+          messageInput.classList.remove("input-error");
+
+          let hasErrors = false;
+
+          // Validación del campo Nombre
+          if (nameInput.value.trim() === "") {
+            errorName.textContent = "El campo Nombre es obligatorio.";
+            nameInput.classList.add("input-error");
+            hasErrors = true;
+          }
+
+          // Validación del campo Correo Electrónico
+          if (emailInput.value.trim() === "") {
+            errorEmail.textContent =
+              "El campo Correo Electrónico es obligatorio.";
+            emailInput.classList.add("input-error");
+            hasErrors = true;
+          } else {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(emailInput.value.trim())) {
+              errorEmail.textContent = "El correo electrónico no es válido.";
+              emailInput.classList.add("input-error");
+              hasErrors = true;
+            }
+          }
+
+          // Validación del campo Descripción
+          if (messageInput.value.trim() === "") {
+            errorMessage.textContent = "El campo Descripción es obligatorio.";
+            messageInput.classList.add("input-error");
+            hasErrors = true;
+          }
+
+          if (hasErrors) {
+            e.preventDefault(); // Evitar el envío del formulario
+          }
+        });
+      });
+    </script>
+    <script>
+      // Script para partículas flotantes
+      document.addEventListener("DOMContentLoaded", function () {
+        const particlesContainer = document.getElementById("footerParticles");
+        const particleCount = 20;
+
+        for (let i = 0; i < particleCount; i++) {
+          const particle = document.createElement("div");
+          particle.classList.add("footer-particle");
+
+          // Tamaño aleatorio entre 1px y 3px
+          const size = Math.random() * 2 + 1;
+          particle.style.width = `${size}px`;
+          particle.style.height = `${size}px`;
+
+          // Posición inicial aleatoria
+          particle.style.left = `${Math.random() * 100}%`;
+          particle.style.bottom = `-10px`;
+
+          // Duración de animación aleatoria entre 10s y 20s
+          const duration = Math.random() * 10 + 10;
+          particle.style.animationDuration = `${duration}s`;
+
+          // Retraso inicial aleatorio
+          particle.style.animationDelay = `${Math.random() * 5}s`;
+
+          particlesContainer.appendChild(particle);
+        }
+      });
+    </script>
+  </body>
+</html>
