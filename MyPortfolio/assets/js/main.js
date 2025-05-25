@@ -97,3 +97,108 @@ function toggleReplyForm(commentId) {
   const form = document.getElementById("replyForm-" + commentId);
   form.style.display = form.style.display === "block" ? "none" : "block";
 }
+
+// Script para mostrar/ocultar el overlay de video
+
+document.addEventListener("DOMContentLoaded", function () {
+  const overlay = document.getElementById("video-overlay");
+  const content = document.getElementById("video-overlay-content");
+
+  document.body.addEventListener("click", function (e) {
+    // 1) Abrir si clicas en un elemento data-video
+    const trigger = e.target.closest("[data-video]");
+    if (trigger) {
+      e.preventDefault();
+      let embed = trigger.getAttribute("data-video");
+      try {
+        embed = JSON.parse(embed);
+      } catch (_) {}
+      content.innerHTML = embed;
+      overlay.classList.add("active");
+      return;
+    }
+    // 2) Cerrar si overlay está activo y clicas fuera del inner
+    if (
+      overlay.classList.contains("active") &&
+      !e.target.closest("#video-overlay-inner")
+    ) {
+      overlay.classList.remove("active");
+      content.innerHTML = "";
+    }
+  });
+});
+
+// ############################################
+// JavaScript mejorado para filtro de proyectos
+// ############################################
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Solo ejecutar en la página de proyectos (archive.php) si existe el formulario
+  const filtro = document.querySelector(".proyectos-filtro");
+  if (!filtro) return;
+
+  // Crear hamburguesa
+  const hamburger = document.createElement("button");
+  hamburger.className = "filter-hamburger";
+  hamburger.setAttribute("aria-label", "Abrir filtros");
+  hamburger.setAttribute("aria-expanded", "false");
+  hamburger.innerHTML = `
+    <div class="hamburger-line"></div>
+    <div class="hamburger-line"></div>
+    <div class="hamburger-line"></div>
+  `;
+
+  const overlay = document.createElement("div");
+  overlay.className = "filter-overlay";
+
+  // Insertar elementos
+  document.body.prepend(hamburger);
+  document.body.append(overlay);
+
+  // Función toggle
+  const toggleMenu = (state) => {
+    const isOpen = state ?? !filtro.classList.contains("active");
+
+    hamburger.classList.toggle("active", isOpen);
+    filtro.classList.toggle("active", isOpen);
+    overlay.classList.toggle("active", isOpen);
+    hamburger.setAttribute("aria-expanded", isOpen.toString());
+
+    document.documentElement.style.overflow = isOpen ? "hidden" : "";
+  };
+
+  // Eventos
+  hamburger.addEventListener("click", () => toggleMenu());
+  overlay.addEventListener("click", () => toggleMenu(false));
+
+  // Cerrar con ESC
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") toggleMenu(false);
+  });
+
+  // Cerrar al hacer click fuera
+  document.addEventListener("click", (e) => {
+    if (
+      !e.target.closest(".proyectos-filtro") &&
+      !e.target.closest(".filter-hamburger")
+    ) {
+      toggleMenu(false);
+    }
+  });
+
+  // Categorías colapsables
+  document.querySelectorAll(".filter-category").forEach((category) => {
+    const title = category.querySelector(".category-title");
+    const content = category.querySelector(".category-content");
+
+    title?.addEventListener("click", () => {
+      category.classList.toggle("active");
+      content.classList.toggle("active");
+    });
+  });
+
+  // Cerrar al redimensionar
+  window.addEventListener("resize", () => {
+    if (window.innerWidth >= 992) toggleMenu(false);
+  });
+});

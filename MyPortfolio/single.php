@@ -4,7 +4,7 @@ get_header();
 
 <main class="main-content">
     <?php
-    get_template_part('template-parts/content', 'herobanner');
+    get_template_part('global-templates/content', 'herobanner_nocontent');
     ?>
     <!-- Contenido de la noticia -->
     <section class="section py-5">
@@ -12,7 +12,7 @@ get_header();
         if (have_posts()) {
             while (have_posts()) {
                 the_post();
-                get_template_part('template-parts/content', 'article');
+                get_template_part('loop-templates/content', 'article');
             }
         }
         ?>

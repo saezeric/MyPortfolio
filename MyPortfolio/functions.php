@@ -4,6 +4,15 @@
  * functions.php de MyPortfolio
  */
 
+/**
+ * Enqueue Dashicons para poder usar las clases 'dashicons dashicons-*' en front.
+ */
+function MyPortfolio_enqueue_dashicons()
+{
+    wp_enqueue_style('dashicons');
+}
+add_action('wp_enqueue_scripts', 'MyPortfolio_enqueue_dashicons', 20);
+
 // 1. Soporte de tema básico
 function MyPortfolio_theme_support()
 {
@@ -79,7 +88,7 @@ add_action('add_meta_boxes', function () {
             <input type="checkbox" name="proyecto_destacado" value="1" <?php checked($value, '1'); ?> />
             DESTACAR
         </label>
-<?php
+    <?php
         },
         'proyecto',
         'side',
@@ -102,26 +111,27 @@ add_action('save_post', function ($post_id) {
 
 // 9. ACF: Cargar y guardar JSON en /acf-json de este tema
 
-/**
- * ACF: Guardar y cargar JSON en /acf-json de este tema
- */
-add_filter('acf/settings/save_json', function($path){
-    // Carpeta donde ACF volcará los .json de los field groups
-    return get_stylesheet_directory() . '/acf-json';
+// ACF JSON: guardar en /wp-content/themes/tu-tema/acf-json
+add_filter('acf/settings/save_json', function ($path) {
+    // Cambia 'tu-tema' por el slug de tu tema si fuera necesario
+    $path = get_stylesheet_directory() . '/acf-json';
+    return $path;
 });
-add_filter('acf/settings/load_json', function($paths){
-    // Eliminamos la ruta por defecto y añadimos la de nuestro tema
-    unset($paths[0]);
+
+// ACF JSON: cargar también desde /acf-json de tu tema
+add_filter('acf/settings/load_json', function ($paths) {
+    // Añadimos nuestra ruta, manteniendo las demás
     $paths[] = get_stylesheet_directory() . '/acf-json';
     return $paths;
 });
 
 // Verificar que ACF esté activo
-add_action('admin_notices', function(){
-    if ( ! class_exists('ACF') ) {
+add_action('admin_notices', function () {
+    if (! class_exists('ACF')) {
         echo '<div class="error"><p>Por favor, activa el plugin Advanced Custom Fields.</p></div>';
     }
 });
+
 
 // Registro de los Custom Post Types (CPTs) necesarios para el tema
 
@@ -158,32 +168,189 @@ function MyPortfolio_register_cpt_proyecto()
 add_action('init', 'MyPortfolio_register_cpt_proyecto');
 
 /**
- * 2. CPT: Intereses Personales
+ * Shortcode [proyectos_filtro]
+ * Formulario con filtros y listado de proyectos filtrados.
  */
-add_action('init', function(){
-    $labels = [
-        'name'               => 'Intereses Personales',
-        'singular_name'      => 'Interés Personal',
-        'menu_name'          => 'Intereses Personales',
-        'name_admin_bar'     => 'Interés Personal',
-        'add_new'            => 'Añadir Interés',
-        'add_new_item'       => 'Añadir Nuevo Interés Personal',
-        'edit_item'          => 'Editar Interés Personal',
-        'new_item'           => 'Nuevo Interés Personal',
-        'view_item'          => 'Ver Interés Personal',
-        'all_items'          => 'Todos los Intereses Personales',
-        'search_items'       => 'Buscar Intereses',
-        'not_found'          => 'No se han encontrado intereses',
-        'not_found_in_trash' => 'No hay intereses en la papelera',
+add_shortcode('proyectos_filtro', function ($atts) {
+    // 1) Define CPT & campos ACF para filtrado
+    $post_types = [
+        'ia'          => 'ias_usadas',
+        'wordpress'   => 'wordpress_usadas',
+        'lenguaje'    => 'lenguajes_usadas',
+        'framework'   => 'frameworks_usadas',
+        'componente'  => 'componentes_usadas',
+        'despliegue'  => 'despliegues_usadas',
+        'herramienta' => 'herramientas_usadas',
     ];
+
+    // 2) Leer orden y dirección
+    $orderby = in_array($_GET['orderby'] ?? '', ['title', 'date']) ? $_GET['orderby'] : 'date';
+    $order   = in_array($_GET['order']   ?? '', ['ASC', 'DESC'])   ? $_GET['order']   : 'DESC';
+
+    // 3) Leer filtros checkbox
+    $filters = [];
+    foreach ($post_types as $slug => $field) {
+        $key = 'filter_' . $slug;
+        if (!empty($_GET[$key]) && is_array($_GET[$key])) {
+            $filters[$field] = array_map('intval', $_GET[$key]);
+        }
+    }
+
+    // 4) Generar formulario
+    ob_start(); ?>
+    <form method="get" class="proyectos-filtro">
+        <div id="filtros-panel">
+            <!-- Ordenación -->
+            <div class="filter-category">
+                <div class="category-title">
+                    <h3><?php esc_html_e('Ordenar por', 'myportfolio'); ?></h3>
+                </div>
+                <div class="category-content filter-group">
+                    <select name="orderby" class="form-select">
+                        <option value="date" <?php selected($orderby, 'date'); ?>>
+                            <?php esc_html_e('Fecha', 'myportfolio'); ?>
+                        </option>
+                        <option value="title" <?php selected($orderby, 'title'); ?>>
+                            <?php esc_html_e('Título', 'myportfolio'); ?>
+                        </option>
+                    </select>
+                    <select name="order" class="form-select">
+                        <option value="DESC" <?php selected($order, 'DESC'); ?>>
+                            <?php esc_html_e('Descendente', 'myportfolio'); ?>
+                        </option>
+                        <option value="ASC" <?php selected($order, 'ASC'); ?>>
+                            <?php esc_html_e('Ascendente', 'myportfolio'); ?>
+                        </option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Filtros dinámicos -->
+            <?php foreach ($post_types as $slug => $field):
+                $terms = get_posts([
+                    'post_type'      => $slug,
+                    'posts_per_page' => -1,
+                    'post_status'    => 'publish',
+                    'orderby'        => 'title',
+                    'order'          => 'ASC',
+                ]);
+                if (!$terms) continue;
+                $key = 'filter_' . $slug;
+            ?>
+                <div class="filter-category">
+                    <div class="category-title">
+                        <h3><?php echo esc_html(ucfirst($slug)); ?></h3>
+                    </div>
+                    <div class="category-content">
+                        <div class="filter-options">
+                            <?php foreach ($terms as $t):
+                                $icon       = get_field('icono', $t->ID);
+                                $icon_url   = is_array($icon) ? $icon['url'] : $icon;
+                                // Leer si este icono debe invertirse
+                                $invert     = (bool) get_field('invertir_icono', $t->ID);
+                            ?>
+                                <label class="filter-option">
+                                    <input
+                                        type="checkbox"
+                                        name="<?php echo esc_attr($key); ?>[]"
+                                        value="<?php echo esc_attr($t->ID); ?>"
+                                        <?php checked(in_array($t->ID, $filters[$field] ?? [])); ?>>
+                                    <span class="custom-checkbox"></span>
+                                    <?php if ($icon_url): ?>
+                                        <img
+                                            src="<?php echo esc_url($icon_url); ?>"
+                                            alt="<?php echo esc_attr(get_the_title($t)); ?>"
+                                            class="filter-icon<?php echo $invert ? ' filter-icon--invert' : ''; ?>">
+                                    <?php endif; ?>
+                                    <span><?php echo esc_html(get_the_title($t)); ?></span>
+                                </label>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+
+            <!-- Botones de acción -->
+            <div class="filter-actions">
+                <button type="submit" class="btn btn-primary">
+                    <?php esc_html_e('Filtrar', 'myportfolio'); ?>
+                </button>
+                <a class="btn btn-link" href="<?php echo esc_url(remove_query_arg(array_map(fn($s) => 'filter_' . $s, array_keys($post_types)))); ?>">
+                    <?php esc_html_e('Restablecer', 'myportfolio'); ?>
+                </a>
+            </div>
+        </div>
+    </form>
+<?php
+    // 5) Preparar consulta
+    $paged = max(1, get_query_var('paged'), get_query_var('page'));
     $args = [
-        'labels'             => $labels,
-        'public'             => true,
-        'show_in_rest'       => true,
-        'has_archive'        => false,
-        'menu_icon'          => 'dashicons-smiley',
-        'supports'           => ['title'],  // solo título; descripción va en ACF
+        'post_type'      => 'proyecto',
+        'posts_per_page' => 9,
+        'orderby'        => $orderby,
+        'order'          => $order,
+        'paged'          => $paged,
     ];
-    register_post_type('interes_personal', $args);
+
+    if ($filters) {
+        // Cada filtro y cada valor deben cumplirse: AND general
+        $meta_queries = ['relation' => 'AND'];
+        foreach ($filters as $meta_key => $ids) {
+            // Para cada ID seleccionado
+            foreach ($ids as $id) {
+                $meta_queries[] = [
+                    'key'     => $meta_key,
+                    'value'   => '"' . intval($id) . '"',
+                    'compare' => 'LIKE',
+                ];
+            }
+        }
+        $args['meta_query'] = $meta_queries;
+    }
+
+    // 6) Loop y paginación
+    $query = new WP_Query($args);
+    if ($query->have_posts()) {
+        echo '<div class="card-container proyectos d-flex flex-wrap gap-5 justify-content-center py-4">';
+        while ($query->have_posts()) {
+            $query->the_post();
+            get_template_part('loop-templates/content', 'projectcard');
+        }
+        echo '</div>';
+        echo '<div class="w-100 mt-4">' . paginate_links([
+            'total'     => $query->max_num_pages,
+            'current'   => $paged,
+            'prev_text' => __('Anterior', 'myportfolio'),
+            'next_text' => __('Siguiente', 'myportfolio'),
+        ]) . '</div>';
+        wp_reset_postdata();
+    } else {
+        echo '<p>' . esc_html__('No hay proyectos para mostrar.', 'myportfolio') . '</p>';
+    }
+
+    return ob_get_clean();
 });
 
+// 10. Filtros de plantilla para páginas específicas
+// Para páginas estáticas como 'contacto', 'sobre-mi', 'curriculum' y 'vista de proyecto'
+
+add_filter('page_template', function ($page_template) {
+    if (is_page('contacto') && $tpl = locate_template('page-templates/page-contacto.php')) {
+        return $tpl;
+    }
+    if (is_page('sobre-mi') && $tpl = locate_template('page-templates/page-sobre-mi.php')) {
+        return $tpl;
+    }
+    if (is_page('curriculum') && $tpl = locate_template('page-templates/page-curriculum.php')) {
+        return $tpl;
+    }
+    return $page_template;
+});
+
+// Para single-proyecto (CPT 'proyecto')
+add_filter('single_template', function ($single_template) {
+    if (is_singular('proyecto') && $tpl = locate_template('page-templates/single-proyecto.php')) {
+        return $tpl;
+    }
+    return $single_template;
+});

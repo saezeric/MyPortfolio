@@ -39,7 +39,7 @@ $blog_query = new WP_Query($args);
             <div class="card-container d-flex flex-wrap gap-5 justify-content-center">
                 <?php if ($blog_query->have_posts()) : ?>
                     <?php while ($blog_query->have_posts()) : $blog_query->the_post(); ?>
-                        <?php get_template_part('template-parts/content', 'postcard'); ?>
+                        <?php get_template_part('loop-templates/content', 'postcard'); ?>
                     <?php endwhile; ?>
 
                     <!-- Paginación -->
