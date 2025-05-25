@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curriculum</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts: Poppins -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome para iconos -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+
+  <body>
+    <!-- Botón para abrir/cerrar el menú en móviles/tablets -->
+    <button class="menu-toggle" id="menuToggle">☰</button>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <!-- Se muestra el avatar y el dropdown de usuario (estáticos) -->
+      <div class="dropdown text-center">
+        <h2>Eric Saez Escalona</h2>
+        <div class="d-flex justify-content-center align-items-center">
+          <a href="#" class="text-decoration-none">
+            <img
+              src="./images/miFoto.png"
+              alt="Mi foto personal para el menú de mi portfolio"
+            />
+          </a>
+        </div>
+      </div>
+
+      <!-- Menú de navegación -->
+      <nav>
+        <ul>
+          <li>
+            <a href="./index.html">
+              <i class="fas fa-home"></i>
+              Inicio
+            </a>
+          </li>
+          <li>
+            <a href="./quien-soy.html">
+              <i class="fas fa-user"></i>
+              ¿Quién soy?
+            </a>
+          </li>
+          <li>
+            <a href="./curriculum.html">
+              <i class="fas fa-file-alt"></i>
+              Curriculum
+            </a>
+          </li>
+          <li>
+            <a href="./proyectos.html">
+              <i class="fas fa-code"></i>
+              Proyectos
+            </a>
+          </li>
+          <li>
+            <a href="./blog.html">
+              <i class="fas fa-blog"></i>
+              Blog
+            </a>
+          </li>
+          <li>
+            <a href="./contacto.html">
+              <i class="fas fa-envelope"></i>
+              Contacto
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <main class="main-content">
+      <section class="section proyect-banner mb-5">
+        <div class="container py-5 text-center position-relative">
+          <h1>Proyecto Ejemplo</h1>
+          <p class="proyect-content glass-box">
+            Descripción breve del proyecto de ejemplo que muestra su propósito y
+            funcionalidad principal.
+          </p>
+          <!-- Partículas decorativas -->
+          <div
+            class="particle"
+            style="
+              top: 20%;
+              left: 15%;
+              width: 8px;
+              height: 8px;
+              animation-delay: -2s;
+            "
+          ></div>
+          <div
+            class="particle"
+            style="
+              top: 70%;
+              right: 10%;
+              width: 12px;
+              height: 12px;
+              animation-duration: 8s;
+            "
+          ></div>
+        </div>
+      </section>
+      <!-- Project Details -->
+      <section class="section py-5">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="project-content text-center">
+                <h2 class="detail-title">Característica Principal</h2>
+                <p>
+                  Este proyecto implementa una funcionalidad clave que permite
+                  al usuario interactuar de forma intuitiva con la interfaz,
+                  mostrando datos en tiempo real y adaptándose a diferentes
+                  tamaños de pantalla.
+                </p>
+
+                <!-- Habilidades Técnicas -->
+                <div class="text-center">
+                  <h2 class="section-title mt-5">Habilidades Técnicas</h2>
+                </div>
+
+                <div class="tech-grid px-2">
+                  <!-- Lenguajes -->
+                  <div class="tech-card">
+                    <img
+                      src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/html5.svg"
+                      class="tech-icon"
+                      alt="Habilidades Técnicas"
+                      style="filter: invert(1)"
+                    />
+                    <h3 class="tech-title">Habilidades</h3>
+                    <div class="tech-items">
+                      <span class="tech-item">
+                        <img
+                          src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/java.svg"
+                          alt="Java"
+                          style="filter: invert(1)"
+                        />
+                        Java
+                      </span>
+                      <span class="tech-item">
+                        <img
+                          src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/csharp.svg"
+                          alt="C#"
+                          style="filter: invert(1)"
+                        />
+                        C#
+                      </span>
+                      <span class="tech-item">
+                        <img
+                          src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/cplusplus.svg"
+                          alt="C++"
+                          style="filter: invert(1)"
+                        />
+                        C++
+                      </span>
+                      <span class="tech-item">
+                        <img
+                          src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/python.svg"
+                          alt="Python"
+                          style="filter: invert(1)"
+                        />
+                        Python
+                      </span>
+                      <span class="tech-item">
+                        <img
+                          src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/javascript.svg"
+                          alt="JS"
+                          style="filter: invert(1)"
+                        />
+                        JS
+                      </span>
+                      <span class="tech-item">
+                        <img
+                          src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/php.svg"
+                          alt="PHP"
+                          style="filter: invert(1)"
+                        />
+                        PHP
+                      </span>
+                      <span class="tech-item">
+                        <img
+                          src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/mysql.svg"
+                          alt="SQL"
+                          style="filter: invert(1)"
+                        />
+                        SQL
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Demo Section -->
+              <div class="demo-section mt-5 text-center">
+                <h2 class="section-title">Demo del Proyecto</h2>
+                <iframe
+                  src="https://proyecto-tetrissaez-eric.vercel.app"
+                  width="100%"
+                  height="800px"
+                  style="border: none; border-radius: 10px; background: #fff"
+                  title="Demo de Proyecto Ejemplo"
+                >
+                </iframe>
+              </div>
+
+              <!-- Links Section -->
+              <div class="links-section mt-5 text-center">
+                <a
+                  href="https://github.com/saezeric/proyectoTetris_SaezEric"
+                  class="btn btn-primary me-3"
+                  target="_blank"
+                >
+                  Ver Repositorio en GitHub
+                </a>
+                <a
+                  href="https://proyecto-tetrissaez-eric.vercel.app"
+                  class="btn btn-primary"
+                  target="_blank"
+                >
+                  Ver Proyecto en Vivo
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Call to Action -->
+      <section class="cta-section">
+        <div class="cta-particles">
+          <div
+            class="cta-particle"
+            style="
+              top: 20%;
+              left: 15%;
+              width: 8px;
+              height: 8px;
+              animation-delay: -2s;
+            "
+          ></div>
+          <div
+            class="cta-particle"
+            style="
+              top: 70%;
+              right: 10%;
+              width: 12px;
+              height: 12px;
+              animation-duration: 8s;
+            "
+          ></div>
+        </div>
+        <div class="container">
+          <div class="cta-content">
+            <h2>¿Interesado en más proyectos?</h2>
+            <p>
+              Explora otros proyectos en mi portafolio o contáctame para
+              colaborar.
+            </p>
+            <div class="cta-buttons">
+              <a href="./proyectos.html" class="cta-btn cta-btn-primary">
+                <i class="fas fa-folder-open"></i>
+                Ver Portafolio
+              </a>
+              <a href="./contacto.html" class="cta-btn cta-btn-outline">
+                <i class="fas fa-paper-plane"></i>
+                Contactar
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-particles" id="footerParticles"></div>
+
+      <!-- CTA de Contacto -->
+      <section class="cta-contacto">
+        <div class="container text-center">
+          <h2>¿Buscas algo más personalizado? ¡Contáctanos!</h2>
+          <form id="ctaForm" novalidate>
+            <input type="text" placeholder="Nombre" required />
+            <span class="error-message" id="error-name"></span>
+
+            <input type="email" placeholder="Correo Electrónico" required />
+            <span class="error-message" id="error-email"></span>
+
+            <textarea
+              placeholder="Describa el motivo del contacto"
+              required
+            ></textarea>
+            <span class="error-message" id="error-message"></span>
+
+            <button type="submit">ENVIAR MENSAJE</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Información Personal -->
+      <section class="container footer-info">
+        <h3>Información de Contacto</h3>
+        <div class="contact-grid">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:ericsaez13@gmail.com">ericsaez13@gmail.com</a>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone-alt"></i>
+            <a href="tel:+34633191460">+34 633 19 14 60</a>
+          </div>
+          <div class="contact-item">
+            <i class="fab fa-linkedin"></i>
+            <a
+              href="https://www.linkedin.com/in/eric-saez-escalona-877049258/"
+              target="_blank"
+              >LinkedIn</a
+            >
+          </div>
+          <div class="contact-item">
+            <i class="fab fa-github"></i>
+            <a href="https://github.com/saezeric" target="_blank">GitHub</a>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Badalona, Barcelona</span>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <p>
+            &copy; 2025 <a href="#">Eric Sáez Escalona</a>. Todos los derechos
+            reservados.
+          </p>
+        </div>
+      </section>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- at the end of the body -->
+    <script type="text/javascript" src="vanilla-tilt.min.js"></script>
+    <!-- Script para el toggle del menú -->
+    <script>
+      document
+        .getElementById("menuToggle")
+        .addEventListener("click", function () {
+          document.getElementById("sidebar").classList.toggle("active");
+          document.querySelector(".overlay")?.classList.toggle("active");
+        });
+    </script>
+    <!-- Script de validación para formulario CTA -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("ctaForm");
+
+        form.addEventListener("submit", function (e) {
+          // Seleccionar campos y contenedores de error
+          const nameInput = form.querySelector("input[type='text']");
+          const emailInput = form.querySelector("input[type='email']");
+          const messageInput = form.querySelector("textarea");
+
+          const errorName = document.getElementById("error-name");
+          const errorEmail = document.getElementById("error-email");
+          const errorMessage = document.getElementById("error-message");
+
+          // Limpiar mensajes de error previos y quitar clases
+          errorName.textContent = "";
+          errorEmail.textContent = "";
+          errorMessage.textContent = "";
+          nameInput.classList.remove("input-error");
+          emailInput.classList.remove("input-error");
+          messageInput.classList.remove("input-error");
+
+          let hasErrors = false;
+
+          // Validación del campo Nombre
+          if (nameInput.value.trim() === "") {
+            errorName.textContent = "El campo Nombre es obligatorio.";
+            nameInput.classList.add("input-error");
+            hasErrors = true;
+          }
+
+          // Validación del campo Correo Electrónico
+          if (emailInput.value.trim() === "") {
+            errorEmail.textContent =
+              "El campo Correo Electrónico es obligatorio.";
+            emailInput.classList.add("input-error");
+            hasErrors = true;
+          } else {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(emailInput.value.trim())) {
+              errorEmail.textContent = "El correo electrónico no es válido.";
+              emailInput.classList.add("input-error");
+              hasErrors = true;
+            }
+          }
+
+          // Validación del campo Descripción
+          if (messageInput.value.trim() === "") {
+            errorMessage.textContent = "El campo Descripción es obligatorio.";
+            messageInput.classList.add("input-error");
+            hasErrors = true;
+          }
+
+          if (hasErrors) {
+            e.preventDefault(); // Evitar el envío del formulario
+          }
+        });
+      });
+    </script>
+    <script>
+      // Script para partículas flotantes
+      document.addEventListener("DOMContentLoaded", function () {
+        const particlesContainer = document.getElementById("footerParticles");
+        const particleCount = 20;
+
+        for (let i = 0; i < particleCount; i++) {
+          const particle = document.createElement("div");
+          particle.classList.add("footer-particle");
+
+          // Tamaño aleatorio entre 1px y 3px
+          const size = Math.random() * 2 + 1;
+          particle.style.width = `${size}px`;
+          particle.style.height = `${size}px`;
+
+          // Posición inicial aleatoria
+          particle.style.left = `${Math.random() * 100}%`;
+          particle.style.bottom = `-10px`;
+
+          // Duración de animación aleatoria entre 10s y 20s
+          const duration = Math.random() * 10 + 10;
+          particle.style.animationDuration = `${duration}s`;
+
+          // Retraso inicial aleatorio
+          particle.style.animationDelay = `${Math.random() * 5}s`;
+
+          particlesContainer.appendChild(particle);
+        }
+      });
+    </script>
+  </body>
+</html>

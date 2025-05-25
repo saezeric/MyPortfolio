@@ -1,0 +1,694 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(
+    to bottom,
+    #1a0b2e,
+    #010418
+  ); /* Gradiente oscurecido */
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #120822;
+  padding: 20px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.sidebar img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar nav ul li {
+  margin: 20px 0; /* Aumentamos el margen entre los elementos del menú */
+}
+
+.sidebar nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.1rem; /* Aumentamos el tamaño del texto del menú */
+}
+
+.sidebar nav ul li a:hover {
+  color: #553bfb;
+}
+
+.main-content {
+  margin-left: 250px;
+  padding: 0;
+  flex-grow: 1;
+}
+
+.btn-primary {
+  background-color: #553bfb;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+}
+
+.section {
+  padding: 40px 0;
+}
+
+.section h2 {
+  color: #ffffff; /* Títulos en blanco */
+}
+
+.skills-section {
+  padding: 40px 0;
+}
+
+.footer {
+  margin-top: 250px;
+  background-color: #04051a; /* Color del footer */
+  padding: 100px 0 20px; /* Añadimos un padding-top alto */
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+
+.menu-toggle {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #553bfb;
+  border: none;
+  color: #ffffff;
+  padding: 10px 15px;
+  font-size: 1.2rem;
+  z-index: 1001;
+  cursor: pointer;
+}
+
+.banner {
+  padding: 80px 0;
+}
+
+.banner .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+
+.banner-text {
+  max-width: 50%;
+}
+
+.banner-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #ffffff; /* Título en blanco */
+}
+
+.banner-text p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.banner img {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.resumen-personal,
+.curriculum,
+.blog {
+  padding: 40px 20px;
+}
+
+.cta-contacto {
+  background-color: #376aed;
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: -250px; /* Ajustamos el margen negativo */
+  margin-bottom: 40px; /* Espacio entre el CTA y el texto del footer */
+  position: relative;
+  z-index: 1;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.cta-contacto h2 {
+  color: #ffffff;
+  margin-bottom: 20px;
+  flex: 1 1 100%;
+}
+
+.cta-contacto .btn {
+  background-color: #553bfb;
+  color: #ffffff;
+  padding: 10px 20px;
+  font-size: 1rem;
+}
+
+.cta-contacto form {
+  flex: 1 1 50%;
+  margin-left: 20px;
+}
+
+.cta-contacto form input,
+.cta-contacto form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.cta-contacto form button {
+  background-color: #553bfb;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.card-container {
+  display: flex;
+  gap: 20px; /* Espacio entre las cards */
+  flex-wrap: wrap;
+  justify-content: flex-start; /* Las cards no se centran */
+  align-items: stretch; /* Para que las cards tengan la misma altura */
+}
+
+.card {
+  background-color: #05071a;
+  border: none;
+  margin-bottom: 20px;
+  flex: 1 1 calc(33.333% - 40px); /* Ajuste para 3 cards por fila */
+  max-width: calc(33.333% - 40px); /* Ajuste para 3 cards por fila */
+  display: flex;               /* Para que cada card sea flex y ocupe la altura */
+  flex-direction: column;
+}
+
+.card img {
+  border-radius: 10px 10px 0 0;
+  width: 100%;
+  height: 300px;       /* Ajusta la altura según tu preferencia */
+  object-fit: cover;   /* Recorta la imagen sin deformarla */
+}
+
+.card-body {
+  padding: 20px;
+  flex: 1;                    /* Ocupa el espacio disponible */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-title {
+  color: #ffffff; /* Títulos en blanco */
+  font-size: 1.5rem;
+}
+
+.card-text {
+  color: #ffffff;
+}
+
+/* Estilos específicos para las cards de "Titulaciones Oficiales" y "Información Relevante" */
+.titulaciones-container .card,
+.informacion-relevante-container .card {
+  flex: 1 1 100%; /* Ocupa todo el ancho disponible */
+  max-width: 100%; /* Ocupa todo el ancho disponible */
+  margin-bottom: 20px; /* Espacio entre las cards */
+}
+
+@media (max-width: 992px) {
+  /* Ajustamos la vista móvil para tablets */
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+  
+  .sidebar.active {
+    transform: translateX(0);
+  }
+  
+  .main-content {
+    margin-left: 0;
+  }
+  
+  .menu-toggle {
+    display: block;
+  }
+  
+  .banner .container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .banner-text {
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+  
+  .banner img {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .cta-contacto {
+    width: 90%;
+  }
+  
+  .card {
+    flex: 1 1 calc(50% - 20px); /* 2 cards por fila en tablet */
+    max-width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 576px) {
+  .card {
+    flex: 1 1 100%; /* 1 card por fila en móvil */
+    max-width: 100%;
+  }
+}
+
+/* Estilos para las cards de la sección de blog */
+.blog .card {
+  background-color: #1a0b2e; /* Color de fondo para las cards */
+  border: none; /* Eliminamos el borde por defecto */
+  border-radius: 10px; /* Bordes redondeados */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto hover suave */
+}
+
+.blog .card:hover {
+  transform: translateY(-5px); /* Efecto de levitación al hacer hover */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra al hacer hover */
+}
+
+.blog .card-img-top {
+  border-radius: 10px 10px 0 0; /* Bordes redondeados solo en la parte superior */
+}
+
+.blog .card-body {
+  padding: 20px; /* Espaciado interno */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.blog .card-title {
+  color: #ffffff; /* Color del título */
+  font-size: 1.25rem; /* Tamaño del título */
+  margin-bottom: 10px; /* Espaciado inferior */
+}
+
+.blog .card-text {
+  color: #d1d1d1; /* Color del texto */
+  font-size: 0.9rem; /* Tamaño del texto */
+  margin-bottom: 15px; /* Espaciado inferior */
+}
+
+.blog .btn-primary {
+  background-color: #553bfb; /* Color del botón */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  padding: 8px 16px; /* Espaciado interno */
+  font-size: 0.9rem; /* Tamaño del texto */
+  transition: background-color 0.3s ease; /* Transición suave */
+}
+
+.blog .btn-primary:hover {
+  background-color: #3a2aa3; /* Cambio de color al hacer hover */
+}
+
+/* Validaciones formulario */
+.error-message {
+  color: #ffcccc;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.input-error {
+  border: 2px solid #ffcccc;
+}
+
+/* Estilos adicionales para la página de contacto */
+.contact-banner {
+  background-color: #200c3a;
+  padding: 60px 20px;
+  border-radius: 10px;
+  margin: 40px auto;
+  max-width: 800px;
+  text-align: center;
+}
+
+.contact-banner h2 {
+  color: #ffffff;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.contact-banner p {
+  color: #d1d1d1;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.contact-info div {
+  text-align: center;
+}
+
+.contact-info i {
+  font-size: 2rem;
+  color: #553bfb;
+  margin-bottom: 10px;
+}
+
+.contact-info p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ffffff;
+  color: #1a0b2e;
+}
+
+.contact-form button {
+  background-color: #553bfb;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.contact-form button:hover {
+  background-color: #376aed;
+}
+
+.intereses-card-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.intereses-card {
+  background-color: #05071a;
+  border: none;
+  margin-bottom: 20px;
+  flex: 1 1 calc(50% - 20px); /* 2 cards por fila en PC */
+  max-width: calc(50% - 20px);
+}
+
+.soft-skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.soft-skills-item {
+  background-color: #1a0b2e;
+  padding: 20px;
+  border-radius: 10px;
+  flex: 1 1 calc(50% - 20px);
+  text-align: center;
+}
+
+.objetivos-section {
+  background-color: #1a0b2e;
+  padding: 40px 20px;
+  margin: 40px 0;
+  border-radius: 10px;
+}
+
+.objetivos-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.objetivos-item {
+  background-color: #120822;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* ================================ */
+/* Forzar texto secundario de cards */
+/* ================================ */
+.card-container .card-text.text-muted,
+.card-container small.text-muted {
+  color: #ffffff !important;
+}
+
+/* ================================ */
+/* Estilos para la sección de noticias y comentarios */
+/* ================================ */
+
+.hero-section {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  padding: 100px 0;
+  color: white;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.publication-date {
+  color: #d1d1d1;
+  font-style: italic;
+  margin-bottom: 30px;
+}
+
+.news-content {
+  line-height: 1.8;
+  margin-bottom: 50px;
+  color: #ffffff;
+}
+
+.detail-title {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: #553bfb;
+}
+
+.section-title {
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #553bfb;
+  color: #ffffff;
+}
+
+.comment-box {
+  border: 1px solid #553bfb;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #120822;
+}
+
+.comment-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.comment-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+  border: 2px solid #553bfb;
+}
+
+.comment-author {
+  display: block;
+  font-size: 1.1rem;
+  color: #ffffff;
+}
+
+.comment-date {
+  color: #d1d1d1;
+  font-size: 0.9rem;
+}
+
+.comment-text {
+  margin-left: 65px;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.comment-reply {
+  margin-left: 50px;
+  margin-top: 20px;
+  padding-left: 20px;
+  border-left: 3px solid #553bfb;
+}
+
+.reply-btn {
+  background: none;
+  border: none;
+  color: #553bfb;
+  cursor: pointer;
+  padding: 5px 0;
+  margin-left: 65px;
+  font-weight: bold;
+}
+
+.reply-btn:hover {
+  text-decoration: underline;
+  color: #376aed;
+}
+
+.reply-form {
+  margin-top: 15px;
+  margin-left: 65px;
+}
+
+.new-comment {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #120822;
+  border-radius: 8px;
+  border: 1px solid #553bfb;
+}
+
+.new-comment h3 {
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.no-comments {
+  text-align: center;
+  color: #d1d1d1;
+  font-style: italic;
+  padding: 20px;
+}
+
+.login-prompt {
+  text-align: center;
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #120822;
+  border-radius: 8px;
+  border: 1px solid #553bfb;
+}
+
+.login-prompt a {
+  color: #553bfb;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-prompt a:hover {
+  text-decoration: underline;
+  color: #376aed;
+}
+
+.not-found {
+  text-align: center;
+  padding: 50px;
+  font-size: 1.2rem;
+  color: #d1d1d1;
+  background-color: #120822;
+  border-radius: 8px;
+  margin: 20px;
+  border: 1px solid #553bfb;
+}
+
+/* Estilos para los formularios en la sección de comentarios */
+.comment-box textarea,
+.new-comment textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #553bfb;
+  border-radius: 5px;
+  background-color: #1a0b2e;
+  color: #ffffff;
+}
+
+.comment-box button[type="submit"],
+.new-comment button[type="submit"] {
+  background-color: #553bfb;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.comment-box button[type="submit"]:hover,
+.new-comment button[type="submit"]:hover {
+  background-color: #376aed;
+}
