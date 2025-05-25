@@ -31,7 +31,6 @@ MyPortfolio
 │── /wp-content
 │   ├── /themes
 │   │   ├── /mi-tema-personalizado  # Plantilla personalizada del portafolio
-│── /database.sql  # Base de datos inicial
 │── README.md
 │── .gitignore
 ```
